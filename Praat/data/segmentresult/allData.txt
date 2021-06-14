@@ -1,0 +1,509 @@
+文件名	音素序号	音素	音素起点时间	音素末点时间	是否为元音	音素末边界类型	音素内音高重音类型	所在词语序号	所在词语	词语起点时间	词语末点时间	词末边界类型	词内音高重音类型	
+AM-F-1_12polite	1	sil	0	0.974	0	0	NULL	1	sil	0	0.974	0	NULL
+AM-F-1_12polite	2	sh	0.974	1.150	0	0	NULL	2	shut	0.974	1.326	1	H*
+AM-F-1_12polite	3	ah	1.150	1.244	1	0	H*	2	shut	0.974	1.326	1	H*
+AM-F-1_12polite	4	t%	1.244	1.326	0	1	NULL	2	shut	0.974	1.326	1	H*
+AM-F-1_12polite	5	dhah%	1.326	1.425	1	1	NULL	3	the	1.326	1.425	1	NULL
+AM-F-1_12polite	6	wihn%	1.425	1.695	1	0	L**	4	window	1.425	2.020	4	L** && L-H%
+AM-F-1_12polite	7	dow%	1.695	2.020	1	4	L-H%	4	window	1.425	2.020	4	L** && L-H%
+AM-F-1_12polite	8	sil	2.020	2.375	0	0	L-H%	5	sil	2.020	2.375	0	L-H%
+AM-F-1_2polite	1	sil	0	1.273	0	0	NULL	1	sil	0	1.273	0	NULL
+AM-F-1_2polite	2	yuw%	1.273	1.363	1	1	NULL	2	you	1.273	1.364	0	NULL
+AM-F-1_2polite	3	k	1.363	1.448	0	0	NULL	3	could	1.364	1.539	1	NULL
+AM-F-1_2polite	4	uhd%	1.448	1.539	1	1	NULL	3	could	1.364	1.539	1	NULL
+AM-F-1_2polite	5	s	1.539	1.667	0	0	NULL	4	send	1.539	1.795	1	H*
+AM-F-1_2polite	6	ehnd%	1.667	1.795	1	1	H*	4	send	1.539	1.795	1	H*
+AM-F-1_2polite	7	aen%	1.795	1.923	1	1	NULL	5	an	1.795	1.923	1	NULL
+AM-F-1_2polite	8	iy%	1.923	2.078	1	0	L+H**	6	email	1.923	2.450	4	L+H** && L-H%
+AM-F-1_2polite	9	meyl%	2.078	2.450	1	4	L-H%	6	email	1.923	2.450	4	L+H** && L-H%
+AM-F-1_2polite	10	sil	2.450	3.000	0	0	L-H%	7	sil	2.450	3.000	0	L-H%
+AM-F-1_32impolite	1	sil	0	0.522	0	0	NULL	1	sil	0	0.522	0	NULL
+AM-F-1_32impolite	2	yah%	0.522	0.601	1	1	NULL	2	you	0.522	0.601	1	NULL
+AM-F-1_32impolite	3	k	0.601	0.673	0	0	NULL	3	could	0.601	0.757	1	NULL
+AM-F-1_32impolite	4	uhd%	0.673	0.757	1	1	NULL	3	could	0.601	0.757	1	NULL
+AM-F-1_32impolite	5	s	0.757	0.900	0	0	NULL	4	send	0.757	1.031	1	H*
+AM-F-1_32impolite	6	ehnd%	0.900	1.031	1	1	H*	4	send	0.757	1.031	1	H*
+AM-F-1_32impolite	7	ahn%	1.031	1.137	1	1	NULL	5	an	1.031	1.137	1	NULL
+AM-F-1_32impolite	8	iy%	1.137	1.301	1	0	!H**	6	email	1.137	1.690	4	!H** && L-L%
+AM-F-1_32impolite	9	meyl%	1.301	1.690	1	4	L-L%	6	email	1.137	1.690	4	!H** && L-L%
+AM-F-1_32impolite	10	sil	1.690	2.187	0	0	L-L%	7	sil	1.690	2.187	0	L-L%
+AM-F-1_35impolite	1	sil	0	0.561	0	0	NULL	1	sil	0	0.561	0	NULL
+AM-F-1_35impolite	2	sh	0.561	0.738	0	0	NULL	2	shut	0.561	0.938	1	H*
+AM-F-1_35impolite	3	ah	0.738	0.854	1	0	H*	2	shut	0.561	0.938	1	H*
+AM-F-1_35impolite	4	t%	0.854	0.938	0	1	NULL	2	shut	0.561	0.938	1	H*
+AM-F-1_35impolite	5	dhah%	0.938	1.005	1	1	NULL	3	the	0.938	1.005	1	NULL
+AM-F-1_35impolite	6	wihn%	1.005	1.160	1	0	!H**	4	window	1.005	1.544	3	!H** && L-
+AM-F-1_35impolite	7	dow%	1.160	1.544	1	3	L-	4	window	1.005	1.544	3	!H** && L-
+AM-F-1_35impolite	8	p	1.544	1.647	0	0	L-	5	please	1.544	2.167	4	L- && H** && H-L%
+AM-F-1_35impolite	9	liyz%	1.647	2.167	1	4	H** && H-L%	5	please	1.544	2.167	4	L- && H** && H-L%
+AM-F-1_35impolite	10	sil	2.167	2.625	0	0	H-L%	6	sil	2.167	2.625	0	H-L%
+AM-F-1_39impolite	1	sil	0	0.607	0	0	NULL	1	sil	0	0.607	0	NULL
+AM-F-1_39impolite	2	t	0.607	0.670	0	0	NULL	2	turn	0.607	0.860	1	H*
+AM-F-1_39impolite	3	ahn%	0.670	0.860	1	1	H*	2	turn	0.607	0.860	1	H*
+AM-F-1_39impolite	4	dhah%	0.860	0.954	1	1	NULL	3	the	0.860	0.954	1	NULL
+AM-F-1_39impolite	5	rey%	0.954	1.158	1	0	H*	4	radio	0.954	1.452	1	H*
+AM-F-1_39impolite	6	diyow%	1.158	1.452	1	1	NULL	4	radio	0.954	1.452	1	H*
+AM-F-1_39impolite	7	aa	1.452	1.790	1	0	!H**	5	off	1.452	1.943	4	!H** && L-L%
+AM-F-1_39impolite	8	f%	1.790	1.943	0	4	L-L%	5	off	1.452	1.943	4	!H** && L-L%
+AM-F-1_39impolite	9	sil	1.943	2.187	0	0	NULL	6	sil	1.943	2.187	0	NULL
+AM-F-1_7polite	1	sil	0	0.698	0	0	NULL	1	sil	0	0.698	0	NULL
+AM-F-1_7polite	2	t	0.698	0.760	0	0	NULL	2	turn	0.698	0.933	1	H*
+AM-F-1_7polite	3	ern%	0.760	0.933	1	1	H*	2	turn	0.698	0.933	1	H*
+AM-F-1_7polite	4	dhah%	0.933	1.056	1	1	NULL	3	the	0.933	1.056	1	NULL
+AM-F-1_7polite	5	rey%	1.056	1.192	1	0	NULL	4	radio	1.056	1.451	1	NULL
+AM-F-1_7polite	6	diyow%	1.192	1.451	1	1	NULL	4	radio	1.056	1.451	1	NULL
+AM-F-1_7polite	7	ao	1.451	1.734	1	0	L**	5	off	1.451	1.901	4	L** && L-H%
+AM-F-1_7polite	8	f%	1.734	1.901	0	4	L-H%	5	off	1.451	1.901	4	L** && L-H%
+AM-F-1_7polite	9	sil	1.901	2.375	0	0	L-H%	6	sil	1.901	2.375	0	L-H%
+AM-F-2_12polite	1	sil	0	0.788	0	0	NULL	1	sil	0	0.788	0	NULL
+AM-F-2_12polite	2	sh	0.788	0.939	0	0	NULL	2	shut	0.788	1.068	1	H*
+AM-F-2_12polite	3	ah	0.939	1.028	1	0	H*	2	shut	0.788	1.068	1	H*
+AM-F-2_12polite	4	t%	1.028	1.068	0	1	NULL	2	shut	0.788	1.068	1	H*
+AM-F-2_12polite	5	sp	1.068	1.119	0	1	NULL	3	sp	1.068	1.119	1	NULL
+AM-F-2_12polite	6	dhah%	1.119	1.232	1	1	NULL	4	the	1.119	1.232	1	NULL
+AM-F-2_12polite	7	wihn%	1.232	1.440	1	0	!H**	5	window	1.232	1.753	4	!H** && L-H%
+AM-F-2_12polite	8	dow%	1.440	1.753	1	4	L-H%	5	window	1.232	1.753	4	!H** && L-H%
+AM-F-2_12polite	9	sil	1.753	2.187	0	0	L-H%	6	sil	1.753	2.187	0	L-H%
+AM-F-2_2polite	1	sil	0	0.916	0	0	NULL	1	sil	0	0.916	0	NULL
+AM-F-2_2polite	2	yah%	0.916	1.038	1	1	H*	2	you	0.916	1.038	1	H*
+AM-F-2_2polite	3	k	1.038	1.111	0	0	NULL	3	could	1.038	1.205	1	NULL
+AM-F-2_2polite	4	uhd%	1.111	1.205	1	1	NULL	3	could	1.038	1.205	1	NULL
+AM-F-2_2polite	5	s	1.205	1.296	0	0	NULL	4	send	1.205	1.424	1	L*
+AM-F-2_2polite	6	ehnd%	1.296	1.424	1	1	L*	4	send	1.205	1.424	1	L*
+AM-F-2_2polite	7	aen%	1.424	1.519	1	1	NULL	5	an	1.424	1.519	1	NULL
+AM-F-2_2polite	8	iy%	1.519	1.682	1	0	L+H**	6	email	1.519	2.162	4	L+H** && L-L%
+AM-F-2_2polite	9	meyl%	1.682	2.162	1	4	L-L%	6	email	1.519	2.162	4	L+H** && L-L%
+AM-F-2_2polite	10	sil	2.162	2.500	0	0	L-L%	7	sil	2.162	2.500	0	L-L%
+AM-F-2_32impolite	1	sil	0	0.919	0	0	NULL	1	sil	0	0.919	0	NULL
+AM-F-2_32impolite	2	yah%	0.919	1.105	1	1	NULL	2	you	0.919	1.105	1	NULL
+AM-F-2_32impolite	3	k	1.105	1.166	0	0	NULL	3	could	1.105	1.240	1	NULL
+AM-F-2_32impolite	4	uhd%	1.166	1.240	1	1	NULL	3	could	1.105	1.240	1	NULL
+AM-F-2_32impolite	5	s	1.240	1.333	0	0	NULL	4	send	1.240	1.439	1	H*
+AM-F-2_32impolite	6	ehnd%	1.333	1.439	1	1	H*	4	send	1.240	1.439	1	H*
+AM-F-2_32impolite	7	aen%	1.439	1.565	1	1	NULL	5	an	1.439	1.565	1	NULL
+AM-F-2_32impolite	8	iy%	1.565	1.769	1	0	H**	6	email	1.565	2.256	4	H**
+AM-F-2_32impolite	9	meyl%	1.769	2.256	1	4	NULL	6	email	1.565	2.256	4	H**
+AM-F-2_32impolite	10	sil	2.256	2.625	0	0	L-H%	7	sil	2.256	2.625	0	L-H%
+AM-F-2_35impolite	1	sil	0	0.669	0	0	NULL	1	sil	0	0.669	0	NULL
+AM-F-2_35impolite	2	sh	0.669	0.872	0	0	NULL	2	shut	0.669	1.050	1	H*
+AM-F-2_35impolite	3	ah	0.872	0.956	1	0	H*	2	shut	0.669	1.050	1	H*
+AM-F-2_35impolite	4	t%	0.956	1.050	0	1	NULL	2	shut	0.669	1.050	1	H*
+AM-F-2_35impolite	5	dhah%	1.050	1.171	1	1	NULL	3	the	1.050	1.171	1	NULL
+AM-F-2_35impolite	6	wihn%	1.171	1.508	1	0	H**	4	window	1.171	1.858	3	H**
+AM-F-2_35impolite	7	dow%	1.508	1.858	1	3	NULL	4	window	1.171	1.858	3	H**
+AM-F-2_35impolite	8	p	1.858	2.036	0	0	L-	5	please	1.858	2.700	4	L- && H**
+AM-F-2_35impolite	9	liyz%	2.036	2.700	1	4	H**	5	please	1.858	2.700	4	L- && H**
+AM-F-2_35impolite	10	sil	2.700	2.937	0	0	L-L%	6	sil	2.700	2.937	0	L-L%
+AM-F-2_39impolite	1	sil	0	0.735	0	0	NULL	1	sil	0	0.735	0	NULL
+AM-F-2_39impolite	2	t	0.735	0.823	0	0	NULL	2	turn	0.735	0.988	1	H*
+AM-F-2_39impolite	3	ahn%	0.823	0.988	1	1	H*	2	turn	0.735	0.988	1	H*
+AM-F-2_39impolite	4	dhah%	0.988	1.097	1	1	NULL	3	the	0.988	1.097	1	NULL
+AM-F-2_39impolite	5	rey%	1.097	1.269	1	0	!H*	4	radio	1.097	1.602	2-	!H*
+AM-F-2_39impolite	6	diyow%	1.269	1.602	1	2-	NULL	4	radio	1.097	1.602	2-	!H*
+AM-F-2_39impolite	7	aa	1.602	1.970	1	0	!H**	5	off	1.602	2.196	4	!H** && L-L%
+AM-F-2_39impolite	8	f%	1.970	2.196	0	4	L-L%	5	off	1.602	2.196	4	!H** && L-L%
+AM-F-2_39impolite	9	sil	2.196	2.562	0	0	NULL	6	sil	2.196	2.562	0	NULL
+AM-F-2_7polite	1	sil	0	0.862	0	0	NULL	1	sil	0	0.862	0	NULL
+AM-F-2_7polite	2	t	0.862	0.935	0	0	NULL	2	turn	0.862	1.043	1	H*
+AM-F-2_7polite	3	ahn%	0.935	1.043	1	1	H*	2	turn	0.862	1.043	1	H*
+AM-F-2_7polite	4	dhah%	1.043	1.162	1	1	NULL	3	the	1.043	1.162	1	NULL
+AM-F-2_7polite	5	rey%	1.162	1.333	1	0	H*	4	radio	1.162	1.559	1	H*
+AM-F-2_7polite	6	diyow%	1.333	1.559	1	1	NULL	4	radio	1.162	1.559	1	H*
+AM-F-2_7polite	7	aa	1.559	1.854	1	0	H**	5	off	1.559	2.080	4	H** && L-L%
+AM-F-2_7polite	8	f%	1.854	2.080	0	4	L-L%	5	off	1.559	2.080	4	H** && L-L%
+AM-F-2_7polite	9	sil	2.080	2.375	0	0	L-L%	6	sil	2.080	2.375	0	L-L%
+AM-M-3_12polite	1	sil	0	1.475	0	0	NULL	1	sil	0	1.475	0	NULL
+AM-M-3_12polite	2	sh	1.475	1.628	0	0	NULL	2	shut	1.475	1.810	1	H*
+AM-M-3_12polite	3	ah	1.628	1.706	1	0	H*	2	shut	1.475	1.810	1	H*
+AM-M-3_12polite	4	t%	1.706	1.810	0	1	NULL	2	shut	1.475	1.810	1	H*
+AM-M-3_12polite	5	dhah%	1.810	1.911	1	1	NULL	3	the	1.810	1.911	1	NULL
+AM-M-3_12polite	6	wihn%	1.911	2.125	1	0	L**	4	window	1.911	2.318	4	L** && L-H%
+AM-M-3_12polite	7	dow%	2.125	2.318	1	4	L-H%	4	window	1.911	2.318	4	L** && L-H%
+AM-M-3_12polite	8	sil	2.318	3.000	0	0	L-H%	5	sil	2.318	3.000	0	L-H%
+AM-M-3_2polite	1	sil	0	0.590	0	0	NULL	1	sil	0	0.590	0	NULL
+AM-M-3_2polite	2	yuw%	0.590	0.794	1	1	NULL	2	you	0.590	0.794	1	NULL
+AM-M-3_2polite	3	k	0.794	0.890	0	0	NULL	3	could	0.794	1.011	1	NULL
+AM-M-3_2polite	4	uhd%	0.890	1.011	1	1	NULL	3	could	0.794	1.011	1	NULL
+AM-M-3_2polite	5	s	1.011	1.146	0	0	NULL	4	send	1.011	1.327	1	H*
+AM-M-3_2polite	6	ehnd%	1.146	1.327	1	1	H*	4	send	1.011	1.327	1	H*
+AM-M-3_2polite	7	aen%	1.327	1.441	1	1	NULL	5	an	1.327	1.441	1	NULL
+AM-M-3_2polite	8	iy%	1.441	1.640	1	0	L+H**	6	email	1.441	1.959	4	L+H** && L-H%
+AM-M-3_2polite	9	meyl%	1.640	1.959	1	4	L-H%	6	email	1.441	1.959	4	L+H** && L-H%
+AM-M-3_2polite	10	sil	1.959	2.687	0	0	L-H%	7	sil	1.959	2.687	0	L-H%
+AM-M-3_32impolite	1	sil	0	0.982	0	0	NULL	1	sil	0	0.982	0	NULL
+AM-M-3_32impolite	2	yuw%	0.982	1.078	1	1	NULL	2	you	0.982	1.078	1	NULL
+AM-M-3_32impolite	3	k	1.078	1.104	0	0	NULL	3	could	1.078	1.176	1	NULL
+AM-M-3_32impolite	4	uhd%	1.104	1.176	1	1	NULL	3	could	1.078	1.176	1	NULL
+AM-M-3_32impolite	5	s	1.176	1.270	0	0	NULL	4	send	1.176	1.392	1	H*
+AM-M-3_32impolite	6	ehnd%	1.270	1.392	1	1	H*	4	send	1.176	1.392	1	H*
+AM-M-3_32impolite	7	aen%	1.392	1.513	1	1	NULL	5	an	1.392	1.513	1	NULL
+AM-M-3_32impolite	8	iy%	1.513	1.604	1	0	!H**	6	email	1.513	1.749	4	!H** && L-L%
+AM-M-3_32impolite	9	meyl%	1.604	1.749	1	4	L-L%	6	email	1.513	1.749	4	!H** && L-L%
+AM-M-3_32impolite	10	sil	1.749	2.250	0	0	L-L%	7	sil	1.749	2.250	0	L-L%
+AM-M-3_35impolite	1	sil	0	1.027	0	0	NULL	1	sil	0	1.027	0	NULL
+AM-M-3_35impolite	2	sh	1.027	1.184	0	0	NULL	2	shut	1.027	1.300	1	H**
+AM-M-3_35impolite	3	ah	1.184	1.210	1	0	H**	2	shut	1.027	1.300	1	H**
+AM-M-3_35impolite	4	t%	1.210	1.300	0	1	NULL	2	shut	1.027	1.300	1	H**
+AM-M-3_35impolite	5	dhah%	1.300	1.389	1	1	NULL	3	the	1.300	1.389	1	NULL
+AM-M-3_35impolite	6	wihn%	1.389	1.566	1	0	L*	4	window	1.389	1.678	3	L* && L-
+AM-M-3_35impolite	7	dow%	1.566	1.678	1	3	L-	4	window	1.389	1.678	3	L* && L-
+AM-M-3_35impolite	8	sp	1.678	1.786	0	0	L-	5	sp	1.678	1.786	0	L-
+AM-M-3_35impolite	9	p	1.786	1.845	0	0	NULL	6	please	1.786	2.149	4	L** && L-L%
+AM-M-3_35impolite	10	liyz%	1.845	2.149	1	4	L** && L-L%	6	please	1.786	2.149	4	L** && L-L%
+AM-M-3_35impolite	11	sil	2.149	2.875	0	0	L-L%	7	sil	2.149	2.875	0	L-L%
+AM-M-3_39impolite	1	sil	0	1.051	0	0	NULL	1	sil	0	1.051	0	NULL
+AM-M-3_39impolite	2	t	1.051	1.100	0	0	NULL	2	turn	1.051	1.278	1	H*
+AM-M-3_39impolite	3	ern%	1.100	1.278	1	1	H*	2	turn	1.051	1.278	1	H*
+AM-M-3_39impolite	4	dhah%	1.278	1.369	1	1	NULL	3	the	1.278	1.369	1	NULL
+AM-M-3_39impolite	5	rey%	1.369	1.503	1	0	!H*	4	radio	1.369	1.745	1	!H*
+AM-M-3_39impolite	6	diyow%	1.503	1.745	1	1	NULL	4	radio	1.369	1.745	1	!H*
+AM-M-3_39impolite	7	aa	1.745	1.922	1	0	!H**	5	off	1.745	2.043	4	!H** && L-L%
+AM-M-3_39impolite	8	f%	1.922	2.043	0	4	L-L%	5	off	1.745	2.043	4	!H** && L-L%
+AM-M-3_39impolite	9	sil	2.043	2.625	0	0	L-L%	6	sil	2.043	2.625	0	L-L%
+AM-M-3_7polite	1	sil	0	0.878	0	0	NULL	1	sil	0	0.878	0	NULL
+AM-M-3_7polite	2	t	0.878	0.919	0	0	NULL	2	turn	0.878	1.080	1	L+H**
+AM-M-3_7polite	3	ern%	0.919	1.080	1	1	L+H**	2	turn	0.878	1.080	1	L+H**
+AM-M-3_7polite	4	dhah%	1.080	1.217	1	1	NULL	3	the	1.080	1.217	1	NULL
+AM-M-3_7polite	5	rey%	1.217	1.359	1	0	L*	4	radio	1.217	1.520	1	L*
+AM-M-3_7polite	6	diyow%	1.359	1.520	1	1	NULL	4	radio	1.217	1.520	1	L*
+AM-M-3_7polite	7	aa	1.520	1.768	1	0	L*	5	off	1.520	2.030	4	L* && L-H%
+AM-M-3_7polite	8	f%	1.768	2.030	0	4	L-H%	5	off	1.520	2.030	4	L* && L-H%
+AM-M-3_7polite	9	sil	2.030	2.500	0	0	L-H%	6	sil	2.030	2.500	0	L-H%
+AM-M-4_12polite	1	sil	0	0.827	0	0	NULL	1	sil	0	0.827	0	NULL
+AM-M-4_12polite	2	sh	0.827	0.988	0	0	NULL	2	shut	0.827	1.134	1	H*
+AM-M-4_12polite	3	ah	0.988	1.077	1	0	H*	2	shut	0.827	1.134	1	H*
+AM-M-4_12polite	4	t%	1.077	1.134	0	1	NULL	2	shut	0.827	1.134	1	H*
+AM-M-4_12polite	5	dhah%	1.134	1.253	1	1	NULL	3	the	1.134	1.253	1	NULL
+AM-M-4_12polite	6	wihn%	1.253	1.510	1	0	L**	4	window	1.253	1.682	4	L** && L-H%
+AM-M-4_12polite	7	dow%	1.510	1.682	1	4	L-H%	4	window	1.253	1.682	4	L** && L-H%
+AM-M-4_12polite	8	sil	1.682	2.500	0	0	L-H%	5	sil	1.682	2.500	0	L-H%
+AM-M-4_2polite	1	sil	0	1.090	0	0	NULL	1	sil	0	1.090	0	NULL
+AM-M-4_2polite	2	yah%	1.090	1.266	1	1	NULL	2	you	1.090	1.266	1	NULL
+AM-M-4_2polite	3	k	1.266	1.337	0	0	NULL	3	could	1.266	1.461	1	NULL
+AM-M-4_2polite	4	uhd%	1.337	1.461	1	1	NULL	3	could	1.266	1.461	1	NULL
+AM-M-4_2polite	5	s	1.461	1.613	0	0	NULL	4	send	1.461	1.754	1	H*
+AM-M-4_2polite	6	ehnd%	1.613	1.754	1	1	H*	4	send	1.461	1.754	1	H*
+AM-M-4_2polite	7	ahn%	1.754	1.871	1	1	NULL	5	an	1.754	1.871	1	NULL
+AM-M-4_2polite	8	iy%	1.871	2.076	1	0	L+H**	6	email	1.871	2.384	4	L+H** && L-L%
+AM-M-4_2polite	9	meyl%	2.076	2.384	1	4	L-L%	6	email	1.871	2.384	4	L+H** && L-L%
+AM-M-4_2polite	10	sil	2.384	2.687	0	0	L-L%	7	sil	2.384	2.687	0	L-L%
+AM-M-4_32impolite	1	sil	0	1.165	0	0	NULL	1	sil	0	1.165	0	NULL
+AM-M-4_32impolite	2	yah%	1.165	1.247	1	1	NULL	2	you	1.165	1.247	1	NULL
+AM-M-4_32impolite	3	k	1.247	1.276	0	0	NULL	3	can	1.247	1.371	1	NULL
+AM-M-4_32impolite	4	an%	1.276	1.371	1	1	NULL	3	can	1.247	1.371	1	NULL
+AM-M-4_32impolite	5	s	1.371	1.506	0	0	H*	4	send	1.371	1.626	1	H*
+AM-M-4_32impolite	6	ehnd%	1.506	1.626	1	1	NULL	4	send	1.371	1.626	1	H*
+AM-M-4_32impolite	7	ahn%	1.626	1.731	1	1	NULL	5	an	1.626	1.731	1	NULL
+AM-M-4_32impolite	8	iy%	1.731	1.830	1	0	!H**	6	email	1.731	2.025	4	!H** && L-L%
+AM-M-4_32impolite	9	meyl%	1.830	2.025	1	4	L-L%	6	email	1.731	2.025	4	!H** && L-L%
+AM-M-4_32impolite	10	sil	2.025	2.500	0	0	L-L%	7	sil	2.025	2.500	0	L-L%
+AM-M-4_35impolite	1	sil	0	0.576	0	0	NULL	1	sil	0	0.576	0	NULL
+AM-M-4_35impolite	2	sh	0.576	0.811	0	0	NULL	2	shut	0.576	1.097	1	H*
+AM-M-4_35impolite	3	ah	0.811	0.968	1	0	H*	2	shut	0.576	1.097	1	H*
+AM-M-4_35impolite	4	t%	0.968	1.097	0	1	NULL	2	shut	0.576	1.097	1	H*
+AM-M-4_35impolite	5	dhah%	1.097	1.223	1	1	NULL	3	the	1.097	1.223	1	NULL
+AM-M-4_35impolite	6	wihn%	1.223	1.541	1	0	!H*	4	window	1.223	1.696	1	!H*
+AM-M-4_35impolite	7	dow%	1.541	1.696	1	1	NULL	4	window	1.223	1.696	1	!H*
+AM-M-4_35impolite	8	p	1.696	1.852	0	0	NULL	5	please	1.696	2.330	4	L** && L-L%
+AM-M-4_35impolite	9	liyz%	1.852	2.330	1	4	L** && L-L%	5	please	1.696	2.330	4	L** && L-L%
+AM-M-4_35impolite	10	sil	2.330	2.625	0	0	NULL	6	sil	2.330	2.625	0	NULL
+AM-M-4_39impolite	1	sil	0	0.609	0	0	NULL	1	sil	0	0.609	0	NULL
+AM-M-4_39impolite	2	t	0.609	0.756	0	0	NULL	2	turn	0.609	1.105	1	H*
+AM-M-4_39impolite	3	ahn%	0.756	1.105	1	1	H*	2	turn	0.609	1.105	1	H*
+AM-M-4_39impolite	4	dhah%	1.105	1.279	1	1	NULL	3	the	1.105	1.279	1	NULL
+AM-M-4_39impolite	5	rey%	1.279	1.443	1	0	NULL	4	radio	1.279	1.907	2	!H*
+AM-M-4_39impolite	6	diyow%	1.443	1.907	1	2	!H*	4	radio	1.279	1.907	2	!H*
+AM-M-4_39impolite	7	aa	1.907	2.238	1	0	H**	5	off	1.907	2.457	4	H**
+AM-M-4_39impolite	8	f%	2.238	2.457	0	4	NULL	5	off	1.907	2.457	4	H**
+AM-M-4_39impolite	9	sil	2.457	2.750	0	0	L-L%	6	sil	2.457	2.750	0	L-L%
+AM-M-4_7polite	1	sil	0	0.990	0	0	NULL	1	sil	0	0.990	0	NULL
+AM-M-4_7polite	2	t	0.990	1.070	0	0	NULL	2	turn	0.990	1.337	1	H*
+AM-M-4_7polite	3	ahn%	1.070	1.337	1	1	H*	2	turn	0.990	1.337	1	H*
+AM-M-4_7polite	4	dhah%	1.337	1.445	1	1	NULL	3	the	1.337	1.445	1	NULL
+AM-M-4_7polite	5	rey%	1.445	1.689	1	0	L+H*	4	radio	1.445	1.837	1	L+H*
+AM-M-4_7polite	6	diyow%	1.689	1.837	1	1	NULL	4	radio	1.445	1.837	1	L+H*
+AM-M-4_7polite	7	aa	1.837	2.060	1	0	!H**	5	off	1.837	2.507	4	!H** && L-L%
+AM-M-4_7polite	8	f%	2.060	2.507	0	4	L-L%	5	off	1.837	2.507	4	!H** && L-L%
+AM-M-4_7polite	9	sil	2.507	2.562	0	0	L-L%	6	sil	2.507	2.562	0	L-L%
+AM-M-5_12polite	1	sil	0	0.410	0	0	NULL	1	sil	0	0.410	0	NULL
+AM-M-5_12polite	2	sh	0.410	0.604	0	0	NULL	2	Shut	0.410	0.801	1	H*
+AM-M-5_12polite	3	ah	0.604	0.697	1	0	H*	2	Shut	0.410	0.801	1	H*
+AM-M-5_12polite	4	t%	0.697	0.801	0	1	NULL	2	Shut	0.410	0.801	1	H*
+AM-M-5_12polite	5	dhah%	0.801	0.904	1	1	NULL	3	the	0.801	0.904	1	NULL
+AM-M-5_12polite	6	wihn%	0.904	1.188	1	0	L+H**	4	window	0.904	1.560	4	L+H** && L-L%
+AM-M-5_12polite	7	dow%	1.188	1.560	1	4	L-L%	4	window	0.904	1.560	4	L+H** && L-L%
+AM-M-5_12polite	8	sil	1.560	3.062	0	0	L-L%	5	sil	1.560	3.062	0	L-L%
+AM-M-5_2polite	1	sil	0	1.456	0	0	NULL	1	sil	0	1.456	0	NULL
+AM-M-5_2polite	2	yuw%	1.456	1.646	1	1	NULL	2	You	1.456	1.646	1	NULL
+AM-M-5_2polite	3	k	1.646	1.682	0	0	NULL	3	could	1.646	1.797	1	NULL
+AM-M-5_2polite	4	uhd%	1.682	1.797	1	1	NULL	3	could	1.646	1.797	1	NULL
+AM-M-5_2polite	5	s	1.797	1.928	0	0	NULL	4	send	1.797	2.052	1	H*
+AM-M-5_2polite	6	ehnd%	1.928	2.052	1	1	H*	4	send	1.797	2.052	1	H*
+AM-M-5_2polite	7	aen%	2.052	2.193	1	1	NULL	5	an	2.052	2.193	1	NULL
+AM-M-5_2polite	8	iy%	2.193	2.321	1	0	L+H**	6	email	2.193	2.709	4	L+H** && !H-H%
+AM-M-5_2polite	9	meyl%	2.321	2.709	1	4	!H-H%	6	email	2.193	2.709	4	L+H** && !H-H%
+AM-M-5_2polite	10	sil	2.709	4.062	0	0	!H-H%	7	sil	2.709	4.062	0	!H-H%
+AM-M-5_32impolite	1	sil	0	0.528	0	0	NULL	1	sil	0	0.528	0	NULL
+AM-M-5_32impolite	2	yuw%	0.528	0.716	1	1	NULL	2	You	0.528	0.716	1	NULL
+AM-M-5_32impolite	3	k	0.716	0.795	0	0	NULL	3	could	0.716	0.931	1	NULL
+AM-M-5_32impolite	4	uhd%	0.795	0.931	1	1	NULL	3	could	0.716	0.931	1	NULL
+AM-M-5_32impolite	5	s	0.931	1.165	0	0	NULL	4	send	0.931	1.542	2p	H*
+AM-M-5_32impolite	6	ehnd%	1.165	1.542	1	2p	H*	4	send	0.931	1.542	2p	H*
+AM-M-5_32impolite	7	aen%	1.542	1.760	1	1	NULL	5	an	1.542	1.760	1	NULL
+AM-M-5_32impolite	8	iy%	1.760	1.959	1	0	!H**	6	email	1.760	2.410	4	!H** && L-L%
+AM-M-5_32impolite	9	meyl%	1.959	2.410	1	4	L-L%	6	email	1.760	2.410	4	!H** && L-L%
+AM-M-5_32impolite	10	sil	2.410	3.437	0	0	L-L%	7	sil	2.410	3.437	0	L-L%
+AM-M-5_35impolite	1	sil	0	0.375	0	0	NULL	1	sil	0	0.375	0	NULL
+AM-M-5_35impolite	2	sh	0.375	0.562	0	0	NULL	2	Shut	0.375	0.734	1	H*
+AM-M-5_35impolite	3	ah	0.562	0.698	1	0	H*	2	Shut	0.375	0.734	1	H*
+AM-M-5_35impolite	4	t%	0.698	0.734	0	1	NULL	2	Shut	0.375	0.734	1	H*
+AM-M-5_35impolite	5	dhah%	0.734	0.837	1	1	NULL	3	the	0.734	0.837	1	NULL
+AM-M-5_35impolite	6	wihn%	0.837	1.105	1	0	L+!H**	4	window	0.837	1.384	3	L+!H** && L-
+AM-M-5_35impolite	7	dow%	1.105	1.384	1	3	L-	4	window	0.837	1.384	3	L+!H** && L-
+AM-M-5_35impolite	8	p	1.384	1.463	0	0	L-	5	please	1.384	2.033	4	L- && L** && H-L%
+AM-M-5_35impolite	9	liyz%	1.463	2.033	1	4	L** && H-L%	5	please	1.384	2.033	4	L- && L** && H-L%
+AM-M-5_35impolite	10	sil	2.033	3.000	0	0	H-L%	6	sil	2.033	3.000	0	H-L%
+AM-M-5_39impolite	1	sil	0	0.513	0	0	NULL	1	sil	0	0.513	0	NULL
+AM-M-5_39impolite	2	t	0.513	0.594	0	0	NULL	2	Turn	0.513	0.784	1	H*
+AM-M-5_39impolite	3	ern%	0.594	0.784	1	1	H*	2	Turn	0.513	0.784	1	H*
+AM-M-5_39impolite	4	dhah%	0.784	0.886	1	1	NULL	3	the	0.784	0.886	1	NULL
+AM-M-5_39impolite	5	rey%	0.886	1.044	1	0	L*+!H	4	radio	0.886	1.254	2	L*+!H
+AM-M-5_39impolite	6	diyow%	1.044	1.254	1	2	NULL	4	radio	0.886	1.254	2	L*+!H
+AM-M-5_39impolite	7	aa	1.254	1.615	1	0	L+H**	5	off	1.254	1.910	4	L+H** && L-L%
+AM-M-5_39impolite	8	f%	1.615	1.910	0	4	L-L%	5	off	1.254	1.910	4	L+H** && L-L%
+AM-M-5_39impolite	9	sil	1.910	2.937	0	0	L-L%	6	sil	1.910	2.937	0	L-L%
+AM-M-5_7polite	1	sil	0	0.704	0	0	NULL	1	sil	0	0.704	0	NULL
+AM-M-5_7polite	2	t	0.704	0.790	0	0	NULL	2	Turn	0.704	1.005	1	L+H*
+AM-M-5_7polite	3	ern%	0.790	1.005	1	1	L+H*	2	Turn	0.704	1.005	1	L+H*
+AM-M-5_7polite	4	dhah%	1.005	1.101	1	1	NULL	3	the	1.005	1.101	1	NULL
+AM-M-5_7polite	5	rey%	1.101	1.332	1	0	!H*	4	radio	1.101	1.636	1	!H*
+AM-M-5_7polite	6	diyow%	1.332	1.636	1	1	NULL	4	radio	1.101	1.636	1	!H*
+AM-M-5_7polite	7	aa	1.636	2.006	1	0	!H**	5	off	1.636	2.320	4	!H** && H-L%
+AM-M-5_7polite	8	f%	2.006	2.320	0	4	H-L%	5	off	1.636	2.320	4	!H** && H-L%
+AM-M-5_7polite	9	sil	2.320	3.562	0	0	H-L%	6	sil	2.320	3.562	0	H-L%
+AM-M-6_12polite	1	sil	0	0.614	0	0	NULL	1	sil	0	0.614	0	NULL
+AM-M-6_12polite	2	sh	0.614	0.734	0	0	NULL	2	shut	0.614	0.880	1	H*
+AM-M-6_12polite	3	ah	0.734	0.795	1	0	H*	2	shut	0.614	0.880	1	H*
+AM-M-6_12polite	4	t%	0.795	0.880	0	1	NULL	2	shut	0.614	0.880	1	H*
+AM-M-6_12polite	5	dhah%	0.880	1.029	1	1	NULL	3	the	0.880	1.029	1	NULL
+AM-M-6_12polite	6	wihn%	1.029	1.293	1	0	L+H**	4	window	1.029	1.550	4	L+H** && L-L%
+AM-M-6_12polite	7	dow%	1.293	1.550	1	4	L-L%	4	window	1.029	1.550	4	L+H** && L-L%
+AM-M-6_12polite	8	sil	1.550	2.500	0	0	L-L%	5	sil	1.550	2.500	0	L-L%
+AM-M-6_2polite	1	sil	0	0.801	0	0	NULL	1	sil	0	0.801	0	NULL
+AM-M-6_2polite	2	yuw%	0.801	0.889	1	1	NULL	2	you	0.801	0.889	1	NULL
+AM-M-6_2polite	3	k	0.889	0.957	0	0	NULL	3	could	0.889	1.042	1	NULL
+AM-M-6_2polite	4	uhd%	0.957	1.042	1	1	NULL	3	could	0.889	1.042	1	NULL
+AM-M-6_2polite	5	s	1.042	1.225	0	0	NULL	4	send	1.042	1.410	1	H*
+AM-M-6_2polite	6	ehnd%	1.225	1.410	1	1	H*	4	send	1.042	1.410	1	H*
+AM-M-6_2polite	7	aen%	1.410	1.500	1	1	NULL	5	an	1.410	1.500	1	NULL
+AM-M-6_2polite	8	iy%	1.500	1.578	1	0	L+H**	6	email	1.500	1.832	4	L+H** && L-H%
+AM-M-6_2polite	9	meyl%	1.578	1.832	1	4	L-H%	6	email	1.500	1.832	4	L+H** && L-H%
+AM-M-6_2polite	10	sil	1.832	2.937	0	0	L-H%	7	sil	1.832	2.937	0	L-H%
+AM-M-6_32impolite	1	sil	0	0.556	0	0	NULL	1	sil	0	0.556	0	NULL
+AM-M-6_32impolite	2	yuw%	0.556	0.721	1	1	NULL	2	you	0.556	0.721	1	NULL
+AM-M-6_32impolite	3	k	0.721	0.972	0	0	NULL	3	could	0.721	1.174	1	L+H*
+AM-M-6_32impolite	4	uhd%	0.972	1.174	1	1	L+H*	3	could	0.721	1.174	1	L+H*
+AM-M-6_32impolite	5	s	1.174	1.312	0	0	NULL	4	send	1.174	1.446	1	!H*
+AM-M-6_32impolite	6	ehnd%	1.312	1.446	1	1	!H*	4	send	1.174	1.446	1	!H*
+AM-M-6_32impolite	7	aen%	1.446	1.572	1	1	NULL	5	an	1.446	1.572	1	NULL
+AM-M-6_32impolite	8	sp	1.572	1.699	0	0	NULL	6	sp	1.572	1.699	0	NULL
+AM-M-6_32impolite	9	iy%	1.699	1.876	1	0	H**	7	email	1.699	2.250	4	H** && L-L%
+AM-M-6_32impolite	10	meyl%	1.876	2.250	1	4	L-L%	7	email	1.699	2.250	4	H** && L-L%
+AM-M-6_32impolite	11	sil	2.250	3.187	0	0	L-L%	8	sil	2.250	3.187	0	L-L%
+AM-M-6_35impolite	1	sil	0	0.460	0	0	NULL	1	sil	0	0.460	0	NULL
+AM-M-6_35impolite	2	sh	0.460	0.604	0	0	NULL	2	shut	0.460	0.802	1	H*
+AM-M-6_35impolite	3	ah	0.604	0.683	1	0	H*	2	shut	0.460	0.802	1	H*
+AM-M-6_35impolite	4	t%	0.683	0.802	0	1	NULL	2	shut	0.460	0.802	1	H*
+AM-M-6_35impolite	5	dhah%	0.802	0.927	1	1	NULL	3	the	0.802	0.927	1	NULL
+AM-M-6_35impolite	6	wihn%	0.927	1.150	1	0	!H**	4	window	0.927	1.317	3	!H** && L-
+AM-M-6_35impolite	7	dow%	1.150	1.317	1	3	L-	4	window	0.927	1.317	3	!H** && L-
+AM-M-6_35impolite	8	p	1.317	1.486	0	0	L-	5	please	1.317	1.853	4	L- && H** && L-L%
+AM-M-6_35impolite	9	liyz%	1.486	1.853	1	4	H** && L-L%	5	please	1.317	1.853	4	L- && H** && L-L%
+AM-M-6_35impolite	10	sil	1.853	2.937	0	0	L-L%	6	sil	1.853	2.937	0	L-L%
+AM-M-6_39impolite	1	sil	0	0.597	0	0	NULL	1	sil	0	0.597	0	NULL
+AM-M-6_39impolite	2	t	0.597	0.706	0	0	NULL	2	turn	0.597	0.869	1	H*
+AM-M-6_39impolite	3	ern%	0.706	0.869	1	1	H*	2	turn	0.597	0.869	1	H*
+AM-M-6_39impolite	4	dhah%	0.869	0.936	1	1	NULL	3	the	0.869	0.936	1	NULL
+AM-M-6_39impolite	5	rey%	0.936	1.102	1	0	!H*	4	radio	0.936	1.365	1	!H*
+AM-M-6_39impolite	6	diyow%	1.102	1.365	1	1	NULL	4	radio	0.936	1.365	1	!H*
+AM-M-6_39impolite	7	aa	1.365	1.563	1	0	H**	5	off	1.365	1.930	4	H** && L-L%
+AM-M-6_39impolite	8	f%	1.563	1.930	0	4	L-L%	5	off	1.365	1.930	4	H** && L-L%
+AM-M-6_39impolite	9	sil	1.930	2.875	0	0	L-L%	6	sil	1.930	2.875	0	L-L%
+AM-M-6_7polite	1	sil	0	0.551	0	0	NULL	1	sil	0	0.551	0	NULL
+AM-M-6_7polite	2	t	0.551	0.613	0	0	NULL	2	turn	0.551	0.702	1	H*
+AM-M-6_7polite	3	ern%	0.613	0.702	1	1	H*	2	turn	0.551	0.702	1	H*
+AM-M-6_7polite	4	dhah%	0.702	0.879	1	1	NULL	3	the	0.702	0.879	1	NULL
+AM-M-6_7polite	5	rey%	0.879	1.043	1	0	L+H*	4	radio	0.879	1.380	2-	L+H*
+AM-M-6_7polite	6	diyow%	1.043	1.380	1	2-	NULL	4	radio	0.879	1.380	2-	L+H*
+AM-M-6_7polite	7	aa	1.380	1.544	1	0	!H**	5	off	1.380	1.820	4	!H** && L-L%
+AM-M-6_7polite	8	f%	1.544	1.820	0	4	L-L%	5	off	1.380	1.820	4	!H** && L-L%
+AM-M-6_7polite	9	sil	1.820	2.437	0	0	L-L%	6	sil	1.820	2.437	0	L-L%
+AM-M-7_12polite	1	sil	0	0.613	0	0	NULL	1	sil	0	0.613	0	NULL
+AM-M-7_12polite	2	sh	0.613	0.791	0	0	NULL	2	shut	0.613	0.970	1	H*
+AM-M-7_12polite	3	ah	0.791	0.885	1	0	H*	2	shut	0.613	0.970	1	H*
+AM-M-7_12polite	4	t%	0.885	0.970	0	1	NULL	2	shut	0.613	0.970	1	H*
+AM-M-7_12polite	5	dhah%	0.970	1.132	1	1	NULL	3	the	0.970	1.132	1	NULL
+AM-M-7_12polite	6	wihn%	1.132	1.321	1	0	H**	4	window	1.132	1.652	4	H** && !H-L%
+AM-M-7_12polite	7	dow%	1.321	1.652	1	4	!H-L%	4	window	1.132	1.652	4	H** && !H-L%
+AM-M-7_12polite	8	sil	1.652	2.187	0	0	!H-L%	5	sil	1.652	2.187	0	!H-L%
+AM-M-7_2polite	1	sil	0	0.888	0	0	NULL	1	sil	0	0.888	0	NULL
+AM-M-7_2polite	2	yah%	0.888	1.072	1	1	NULL	2	you	0.888	1.072	1	NULL
+AM-M-7_2polite	3	k	1.072	1.141	0	0	NULL	3	could	1.072	1.251	1	NULL
+AM-M-7_2polite	4	uhd%	1.141	1.251	1	1	NULL	3	could	1.072	1.251	1	NULL
+AM-M-7_2polite	5	s	1.251	1.380	0	0	NULL	4	send	1.251	1.576	1	H*
+AM-M-7_2polite	6	ehnd%	1.380	1.576	1	1	H*	4	send	1.251	1.576	1	H*
+AM-M-7_2polite	7	ahn%	1.576	1.751	1	1	NULL	5	an	1.576	1.751	1	NULL
+AM-M-7_2polite	8	iy%	1.751	1.879	1	0	L+H**	6	email	1.751	2.227	4	L+H** && L-L%
+AM-M-7_2polite	9	meyl%	1.879	2.227	1	4	L-L%	6	email	1.751	2.227	4	L+H** && L-L%
+AM-M-7_2polite	10	sil	2.227	2.937	0	0	L-L%	7	sil	2.227	2.937	0	L-L%
+AM-M-7_32impolite	1	sil	0	0.557	0	0	NULL	1	sil	0	0.557	0	NULL
+AM-M-7_32impolite	2	yah%	0.557	0.712	1	1	NULL	2	you	0.557	0.712	1	NULL
+AM-M-7_32impolite	3	k	0.712	0.764	0	0	NULL	3	could	0.712	0.851	1	NULL
+AM-M-7_32impolite	4	uhd%	0.764	0.851	1	1	NULL	3	could	0.712	0.851	1	NULL
+AM-M-7_32impolite	5	s	0.851	1.046	0	0	NULL	4	send	0.851	1.314	1	L+H*
+AM-M-7_32impolite	6	ehnd%	1.046	1.314	1	1	L+H*	4	send	0.851	1.314	1	L+H*
+AM-M-7_32impolite	7	ahn%	1.314	1.549	1	1	NULL	5	an	1.314	1.549	1	NULL
+AM-M-7_32impolite	8	iy%	1.549	1.727	1	0	L**	6	email	1.549	2.154	4	L** && L-L%
+AM-M-7_32impolite	9	meyl%	1.727	2.154	1	4	L-L%	6	email	1.549	2.154	4	L** && L-L%
+AM-M-7_32impolite	10	sil	2.154	2.625	0	0	L-L%	7	sil	2.154	2.625	0	L-L%
+AM-M-7_35impolite	1	sil	0	0.489	0	0	NULL	1	sil	0	0.489	0	NULL
+AM-M-7_35impolite	2	sh	0.489	0.646	0	0	NULL	2	shut	0.489	0.838	1	H*
+AM-M-7_35impolite	3	ah	0.646	0.754	1	0	H*	2	shut	0.489	0.838	1	H*
+AM-M-7_35impolite	4	t%	0.754	0.838	0	1	NULL	2	shut	0.489	0.838	1	H*
+AM-M-7_35impolite	5	dhah%	0.838	0.964	1	1	NULL	3	the	0.838	0.964	1	NULL
+AM-M-7_35impolite	6	wihn%	0.964	1.190	1	0	H**	4	window	0.964	1.495	4	H** && L-L%
+AM-M-7_35impolite	7	dow%	1.190	1.495	1	4	L-L%	4	window	0.964	1.495	4	H** && L-L%
+AM-M-7_35impolite	8	sp	1.495	1.724	0	0	L-L%	5	sp	1.495	1.724	0	L-L%
+AM-M-7_35impolite	9	p	1.724	1.828	0	0	NULL	6	please	1.724	2.423	4	H** && L-L%
+AM-M-7_35impolite	10	liyz%	1.828	2.423	1	4	H** && L-L%	6	please	1.724	2.423	4	H** && L-L%
+AM-M-7_35impolite	11	sil	2.423	2.750	0	0	L-L%	7	sil	2.423	2.750	0	L-L%
+AM-M-7_39impolite	1	sil	0	0.459	0	0	NULL	1	sil	0	0.459	0	NULL
+AM-M-7_39impolite	2	t	0.459	0.565	0	0	NULL	2	turn	0.459	0.780	1	H*
+AM-M-7_39impolite	3	ahn%	0.565	0.780	1	1	H*	2	turn	0.459	0.780	1	H*
+AM-M-7_39impolite	4	dhah%	0.780	0.837	1	1	NULL	3	the	0.780	0.837	1	NULL
+AM-M-7_39impolite	5	rey%	0.837	1.069	1	0	!H*	4	radio	0.837	1.412	1	!H*
+AM-M-7_39impolite	6	diyow%	1.069	1.412	1	1	NULL	4	radio	0.837	1.412	1	!H*
+AM-M-7_39impolite	7	aa	1.412	1.758	1	0	H**	5	off	1.412	2.118	4	H** && L-L%
+AM-M-7_39impolite	8	f%	1.758	2.118	0	4	L-L%	5	off	1.412	2.118	4	H** && L-L%
+AM-M-7_39impolite	9	sil	2.118	2.375	0	0	L-L%	6	sil	2.118	2.375	0	L-L%
+AM-M-7_7polite	1	sil	0	0.947	0	0	NULL	1	sil	0	0.947	0	NULL
+AM-M-7_7polite	2	t	0.947	1.044	0	0	NULL	2	turn	0.947	1.201	1	H*
+AM-M-7_7polite	3	ahn%	1.044	1.201	1	1	H*	2	turn	0.947	1.201	1	H*
+AM-M-7_7polite	4	dhah%	1.201	1.283	1	1	NULL	3	the	1.201	1.283	1	NULL
+AM-M-7_7polite	5	rey%	1.283	1.475	1	0	L+H*	4	radio	1.283	1.803	1	L+H*
+AM-M-7_7polite	6	diyow%	1.475	1.803	1	1	NULL	4	radio	1.283	1.803	1	L+H*
+AM-M-7_7polite	7	aa	1.803	2.002	1	0	!H**	5	off	1.803	2.240	4	!H** && L-L%
+AM-M-7_7polite	8	f%	2.002	2.240	0	4	L-L%	5	off	1.803	2.240	4	!H** && L-L%
+AM-M-7_7polite	9	sil	2.240	2.437	0	0	L-L%	6	sil	2.240	2.437	0	L-L%
+AM-M-8_12polite	1	sil	0	0.493	0	0	NULL	1	sil	0	0.493	0	NULL
+AM-M-8_12polite	2	sh	0.493	0.634	0	0	NULL	2	shut	0.493	0.822	1	H*
+AM-M-8_12polite	3	ah	0.634	0.712	1	0	H*	2	shut	0.493	0.822	1	H*
+AM-M-8_12polite	4	t%	0.712	0.822	0	1	NULL	2	shut	0.493	0.822	1	H*
+AM-M-8_12polite	5	dhah%	0.822	0.971	1	1	NULL	3	the	0.822	0.971	1	NULL
+AM-M-8_12polite	6	wihn%	0.971	1.188	1	0	L**	4	window	0.971	1.487	4	L** && L-H%
+AM-M-8_12polite	7	dow%	1.188	1.487	1	4	L-H%	4	window	0.971	1.487	4	L** && L-H%
+AM-M-8_12polite	8	sil	1.487	2.125	0	0	L-H%	5	sil	1.487	2.125	0	L-H%
+AM-M-8_2polite	1	sil	0	1.065	0	0	NULL	1	sil	0	1.065	0	NULL
+AM-M-8_2polite	2	yuw%	1.065	1.140	1	1	NULL	2	you	1.065	1.140	1	NULL
+AM-M-8_2polite	3	k	1.140	1.204	0	0	NULL	3	could	1.140	1.298	1	NULL
+AM-M-8_2polite	4	uhd%	1.204	1.298	1	1	NULL	3	could	1.140	1.298	1	NULL
+AM-M-8_2polite	5	s	1.298	1.403	0	0	NULL	4	send	1.298	1.569	1	H*
+AM-M-8_2polite	6	ehnd%	1.403	1.569	1	1	H*	4	send	1.298	1.569	1	H*
+AM-M-8_2polite	7	aen%	1.569	1.690	1	1	NULL	5	an	1.569	1.690	1	NULL
+AM-M-8_2polite	8	iy%	1.690	1.812	1	0	L+H**	6	email	1.690	2.166	4	L+H** && L-H%
+AM-M-8_2polite	9	meyl%	1.812	2.166	1	4	L-H%	6	email	1.690	2.166	4	L+H** && L-H%
+AM-M-8_2polite	10	sil	2.166	2.875	0	0	L-H%	7	sil	2.166	2.875	0	L-H%
+AM-M-8_32impolite	1	sil	0	1.163	0	0	NULL	1	sil	0	1.163	0	NULL
+AM-M-8_32impolite	2	yuw%	1.163	1.272	1	1	NULL	2	you	1.163	1.272	1	NULL
+AM-M-8_32impolite	3	k	1.272	1.540	0	0	NULL	3	could	1.272	1.773	1	L+H*
+AM-M-8_32impolite	4	uhd%	1.540	1.773	1	1	L+H*	3	could	1.272	1.773	1	L+H*
+AM-M-8_32impolite	5	s	1.773	1.906	0	0	NULL	4	send	1.773	2.067	1	!H*
+AM-M-8_32impolite	6	ehnd%	1.906	2.067	1	1	!H*	4	send	1.773	2.067	1	!H*
+AM-M-8_32impolite	7	aen%	2.067	2.215	1	1	NULL	5	an	2.067	2.215	1	NULL
+AM-M-8_32impolite	8	iy%	2.215	2.338	1	0	H**	6	email	2.215	2.715	4	H** && L-L%
+AM-M-8_32impolite	9	meyl%	2.338	2.715	1	4	L-L%	6	email	2.215	2.715	4	H** && L-L%
+AM-M-8_32impolite	10	sil	2.715	3.562	0	0	L-L%	7	sil	2.715	3.562	0	L-L%
+AM-M-8_35impolite	1	sil	0	0.614	0	0	NULL	1	sil	0	0.614	0	NULL
+AM-M-8_35impolite	2	sh	0.614	0.761	0	0	NULL	2	shut	0.614	0.987	1	H*
+AM-M-8_35impolite	3	ah	0.761	0.870	1	0	H*	2	shut	0.614	0.987	1	H*
+AM-M-8_35impolite	4	t%	0.870	0.987	0	1	NULL	2	shut	0.614	0.987	1	H*
+AM-M-8_35impolite	5	dhah%	0.987	1.161	1	1	NULL	3	the	0.987	1.161	1	NULL
+AM-M-8_35impolite	6	wihn%	1.161	1.365	1	0	!H**	4	window	1.161	1.669	3	!H** && L-
+AM-M-8_35impolite	7	dow%	1.365	1.669	1	3	L-	4	window	1.161	1.669	3	!H** && L-
+AM-M-8_35impolite	8	p	1.669	1.922	0	0	L-	5	please	1.669	2.547	4	L- && H* && L-L%
+AM-M-8_35impolite	9	liyz%	1.922	2.547	1	4	H* && L-L%	5	please	1.669	2.547	4	L- && H* && L-L%
+AM-M-8_35impolite	10	sil	2.547	3.125	0	0	L-L%	6	sil	2.547	3.125	0	L-L%
+AM-M-8_39impolite	1	sil	0	0.907	0	0	NULL	1	sil	0	0.907	0	NULL
+AM-M-8_39impolite	2	t	0.907	0.970	0	0	NULL	2	turn	0.907	1.100	1	H*
+AM-M-8_39impolite	3	ern%	0.970	1.100	1	1	H*	2	turn	0.907	1.100	1	H*
+AM-M-8_39impolite	4	dhah%	1.100	1.334	1	1	NULL	3	the	1.100	1.334	1	NULL
+AM-M-8_39impolite	5	rey%	1.334	1.478	1	0	!H*	4	radio	1.334	1.752	1	!H*
+AM-M-8_39impolite	6	diyow%	1.478	1.752	1	1	NULL	4	radio	1.334	1.752	1	!H*
+AM-M-8_39impolite	7	aa	1.752	2.029	1	0	!H**	5	off	1.752	2.286	4	!H** && L-L%
+AM-M-8_39impolite	8	f%	2.029	2.286	0	4	L-L%	5	off	1.752	2.286	4	!H** && L-L%
+AM-M-8_39impolite	9	sil	2.286	3.000	0	0	L-L%	6	sil	2.286	3.000	0	L-L%
+AM-M-8_7polite	1	sil	0	0.969	0	0	NULL	1	sil	0	0.969	0	NULL
+AM-M-8_7polite	2	t	0.969	1.049	0	0	NULL	2	turn	0.969	1.153	1	H*
+AM-M-8_7polite	3	ern%	1.049	1.153	1	1	H*	2	turn	0.969	1.153	1	H*
+AM-M-8_7polite	4	dhah%	1.153	1.300	1	1	NULL	3	the	1.153	1.300	1	NULL
+AM-M-8_7polite	5	rey%	1.300	1.533	1	0	L*	4	radio	1.300	1.804	1	L*
+AM-M-8_7polite	6	diyow%	1.533	1.804	1	1	NULL	4	radio	1.300	1.804	1	L*
+AM-M-8_7polite	7	aa	1.804	1.989	1	0	L**	5	off	1.804	2.150	4	L** && L-H%
+AM-M-8_7polite	8	f%	1.989	2.150	0	4	L-H%	5	off	1.804	2.150	4	L** && L-H%
+AM-M-8_7polite	9	sil	2.150	2.875	0	0	L-H%	6	sil	2.150	2.875	0	L-H%
+AM-M-9_12polite	1	sil	0	0.660	0	0	NULL	1	sil	0	0.660	0	NULL
+AM-M-9_12polite	2	sh	0.660	0.841	0	0	NULL	2	shut	0.660	1.020	1	%H
+AM-M-9_12polite	3	ah	0.841	0.930	1	0	%H	2	shut	0.660	1.020	1	%H
+AM-M-9_12polite	4	t%	0.930	1.020	0	1	NULL	2	shut	0.660	1.020	1	%H
+AM-M-9_12polite	5	dhah%	1.020	1.090	1	1	NULL	3	the	1.020	1.090	1	NULL
+AM-M-9_12polite	6	wihn%	1.090	1.365	1	0	L**	4	window	1.090	1.640	4	L** && L-L%
+AM-M-9_12polite	7	dow%	1.365	1.640	1	4	L-L%	4	window	1.090	1.640	4	L** && L-L%
+AM-M-9_12polite	8	sil	1.640	2.312	0	0	L-L%	5	sil	1.640	2.312	0	L-L%
+AM-M-9_2polite	1	sil	0	1.480	0	0	NULL	1	sil	0	1.480	0	NULL
+AM-M-9_2polite	2	yuw%	1.480	1.790	1	1	NULL	2	you	1.480	1.790	1	NULL
+AM-M-9_2polite	3	k	1.790	1.870	0	0	NULL	3	could	1.790	2.090	2-	NULL
+AM-M-9_2polite	4	uhd%	1.870	2.090	1	2-	NULL	3	could	1.790	2.090	2-	NULL
+AM-M-9_2polite	5	s	2.090	2.250	0	0	NULL	4	send	2.090	2.407	1	H*
+AM-M-9_2polite	6	ehnd%	2.250	2.407	1	1	H*	4	send	2.090	2.407	1	H*
+AM-M-9_2polite	7	aen%	2.407	2.536	1	1	NULL	5	an	2.407	2.536	1	NULL
+AM-M-9_2polite	8	iy%	2.536	2.693	1	0	H**	6	email	2.536	3.160	4	H** && L-H%
+AM-M-9_2polite	9	meyl%	2.693	3.160	1	4	L-H%	6	email	2.536	3.160	4	H** && L-H%
+AM-M-9_2polite	10	sil	3.160	3.625	0	0	L-H%	7	sil	3.160	3.625	0	L-H%
+AM-M-9_32impolite	1	sil	0	0.630	0	0	NULL	1	sil	0	0.630	0	NULL
+AM-M-9_32impolite	2	yuw%	0.630	0.750	1	1	NULL	2	you	0.630	0.750	1	NULL
+AM-M-9_32impolite	3	k	0.750	0.790	0	0	NULL	3	could	0.750	0.866	1	NULL
+AM-M-9_32impolite	4	uhd%	0.790	0.866	1	1	NULL	3	could	0.750	0.866	1	NULL
+AM-M-9_32impolite	5	s	0.866	1.000	0	0	NULL	4	send	0.866	1.184	1	H*
+AM-M-9_32impolite	6	ehnd%	1.000	1.184	1	1	H*	4	send	0.866	1.184	1	H*
+AM-M-9_32impolite	7	aen%	1.184	1.266	1	1	NULL	5	an	1.184	1.266	1	NULL
+AM-M-9_32impolite	8	iy%	1.266	1.393	1	0	!H**	6	email	1.266	1.718	4	!H** && L-L%
+AM-M-9_32impolite	9	meyl%	1.393	1.718	1	4	L-L%	6	email	1.266	1.718	4	!H** && L-L%
+AM-M-9_32impolite	10	sil	1.718	2.625	0	0	L-L%	7	sil	1.718	2.625	0	L-L%
+AM-M-9_35impolite	1	sil	0	0.390	0	0	NULL	1	sil	0	0.390	0	NULL
+AM-M-9_35impolite	2	sh	0.390	0.585	0	0	NULL	2	shut	0.390	0.770	1	H*
+AM-M-9_35impolite	3	ah	0.585	0.680	1	0	H*	2	shut	0.390	0.770	1	H*
+AM-M-9_35impolite	4	t%	0.680	0.770	0	1	NULL	2	shut	0.390	0.770	1	H*
+AM-M-9_35impolite	5	dhah%	0.770	0.830	1	1	NULL	3	the	0.770	0.830	1	NULL
+AM-M-9_35impolite	6	wihn%	0.830	1.118	1	0	!H**	4	window	0.830	1.419	0	!H**
+AM-M-9_35impolite	7	dow%	1.118	1.420	1	3	L-	4	window	0.830	1.419	0	!H**
+AM-M-9_35impolite	8	p	1.420	1.536	0	0	L-	5	please	1.419	2.161	4	L- && H** && L-L%
+AM-M-9_35impolite	9	liyz%	1.536	2.161	1	4	H** && L-L%	5	please	1.419	2.161	4	L- && H** && L-L%
+AM-M-9_35impolite	10	sil	2.161	2.875	0	0	L-L%	6	sil	2.161	2.875	0	L-L%
+AM-M-9_39impolite	1	sil	0	0.864	0	0	NULL	1	sil	0	0.864	0	NULL
+AM-M-9_39impolite	2	t	0.864	0.940	0	0	NULL	2	turn	0.864	1.277	1	H*
+AM-M-9_39impolite	3	ern%	0.940	1.277	1	1	H*	2	turn	0.864	1.277	1	H*
+AM-M-9_39impolite	4	dhah%	1.277	1.346	1	1	NULL	3	the	1.277	1.346	1	NULL
+AM-M-9_39impolite	5	rey%	1.346	1.609	1	0	!H*	4	radio	1.346	1.897	1	!H*
+AM-M-9_39impolite	6	diyow%	1.609	1.897	1	1	NULL	4	radio	1.346	1.897	1	!H*
+AM-M-9_39impolite	7	aa	1.897	2.330	1	0	!H**	5	off	1.897	2.547	4	!H** && L-L%
+AM-M-9_39impolite	8	f%	2.330	2.547	0	4	L-L%	5	off	1.897	2.547	4	!H** && L-L%
+AM-M-9_39impolite	9	sil	2.547	3.312	0	0	L-L%	6	sil	2.547	3.312	0	L-L%
+AM-M-9_7polite	1	sil	0	1.216	0	0	NULL	1	sil	0	1.216	0	NULL
+AM-M-9_7polite	2	t	1.216	1.270	0	0	NULL	2	turn	1.216	1.447	1	%H
+AM-M-9_7polite	3	ern%	1.270	1.447	1	1	%H	2	turn	1.216	1.447	1	%H
+AM-M-9_7polite	4	dhah%	1.447	1.540	1	1	NULL	3	the	1.447	1.540	1	NULL
+AM-M-9_7polite	5	rey%	1.540	1.724	1	0	!H*	4	radio	1.540	1.970	1	!H*
+AM-M-9_7polite	6	diyow%	1.724	1.970	1	1	NULL	4	radio	1.540	1.970	1	!H*
+AM-M-9_7polite	7	aa	1.970	2.250	1	0	L**	5	off	1.970	2.510	4	L** && L-L%
+AM-M-9_7polite	8	f%	2.250	2.510	0	4	L-L%	5	off	1.970	2.510	4	L** && L-L%
+AM-M-9_7polite	9	sil	2.510	3.000	0	0	L-L%	6	sil	2.510	3.000	0	L-L%

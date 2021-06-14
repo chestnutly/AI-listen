@@ -1,0 +1,139 @@
+
+#功能：根据发音文本文件名列表将各声音文件的发音文本整理为word.mlf文件。
+#适用于Praat 5.4.04及以后的版本
+#Author：XIONG Ziyu
+#2017-01-08
+#
+#参数说明
+#record_text_list：发音文本文件名的列表文件，应为UTF8编码格式
+#word_mlf_fileh：MLF文件的保存路径和文件名
+
+
+form infomation
+	sentence record_text_list C:\xSegmenter\TEMP\rec2mlf.lst
+	sentence word_mlf_file C:\xSegmenter\TEMP\word.mlf
+endform
+
+Text reading preferences... UTF-8
+Text writing preferences... UTF-8
+Create TextGrid: 0, 1, "Mary John bell", "bell"
+select all
+Remove
+
+Read Strings from raw text file... 'record_text_list$'
+Rename... temp
+fNum=Get number of strings
+filedelete 'word_mlf_file$'
+fileappend "'word_mlf_file$'" #!MLF!#'newline$'
+
+biaodian$=""""
+biaodian$=biaodian$+"; /,.; []	\`-=<>？?:\{}|+_()*&^%\$#@!~　，。、；【】·！￥%…&*（）—：“”‘’《》"
+efbbbf$=left$("﻿ᠨᠢᠭᠡ",1)
+tdun$=",，.。！!？?…:"
+onebyone=0
+
+allFileNum$=fixed$(fNum,0)
+cdata$=""
+cnum=0
+for f from 1 to fNum
+	select Strings temp
+	tt$=Get string... 'f'
+	fName$=""
+	sName$=""
+	if index(tt$,"#")>0
+		fName$=left$(tt$,index(tt$,"#")-1)
+		sName$=right$(tt$,length(tt$)-index(tt$,"#"))
+	endif
+	if fileReadable(fName$)=1
+		info$=fixed$(f,0)+"/"+allFileNum$+" recTxt2Mlf 正在处理下一文件:"+newline$+fName$+newline$+" "
+		echo 'info$'
+		nowarn nocheck Read Strings from raw text file... 'fName$'
+		iNum=Get number of strings
+		ctxts$=""""+sName$+""""+newline$+"sil"+newline$
+		pre$="sil"
+		for i from 1 to iNum
+			inText$=Get string... 'i'
+			if left$(inText$,1)=efbbbf$ and i=1
+				inText$=right$(inText$,length(inText$)-1)
+			endif
+			call trim
+			if inText$<>""
+				call delText { }
+				call delText [ ]
+				call delText < >
+				if onebyone=1
+					nTxt$=""
+					for j from 1 to length(inText$)
+						tt$=mid$(inText$,j,1)
+						if index(biaodian$,tt$)=0
+							nTxt$=nTxt$+tt$+" "
+						endif
+					endfor
+					inText$=nTxt$
+				endif
+				call trim
+				cword$=""
+				inText$=inText$+";"
+				error=0
+				for j from 1 to length(inText$)
+					tt$=mid$(inText$,j,1)
+					pos=index("ABCDEFGHIJKLMNOPQRSTUVWXYZ",tt$)
+					if pos>0
+						tt$=mid$("abcdefghijklmnopqrstuvwxyz",pos,1)
+					endif
+					if index(biaodian$,tt$)>0
+						if cword$<>" " and cword$<>"" and cword$<>"sil" and cword$<>"sp"
+							ctxts$=ctxts$+cword$+newline$
+							pre$=cword$
+						endif
+						if index(tdun$,tt$)>0 and pre$!="sil"
+							ctxts$=ctxts$+"sil"+newline$
+							pre$="sil"
+						endif
+						cword$=""
+					else
+						cword$=cword$+tt$
+					endif
+				endfor
+			endif
+		endfor
+		if error=0
+			if pre$!="sil"
+				cdata$=cdata$+ctxts$+"sil"+newline$+"."+newline$
+			else
+				cdata$=cdata$+ctxts$+"."+newline$
+			endif
+		endif
+		if cnum>20
+			fileappend "'word_mlf_file$'" 'cdata$'
+			cdata$=""
+			cnum=0
+		endif
+		cnum=cnum+1
+		select all
+		minus Strings temp
+		Remove
+	endif
+endfor
+if cdata$!=""
+	fileappend "'word_mlf_file$'" 'cdata$'
+endif
+echo "发音文本文件的整理过程已经运行结束！"
+
+procedure delText lMark$ rMark$
+	while index(inText$,lMark$)>0 and index(inText$,rMark$)>index(inText$,lMark$) and inText$!=""
+		lstr$=left$(inText$,index(inText$,lMark$)-1)
+		rstr$=right$(inText$,length(inText$)-index(inText$,rMark$)-length(rMark$)+1)
+		inText$=lstr$+rstr$
+	endwhile
+endproc
+
+procedure trim
+	while left$(inText$,1)=" " or left$(inText$,1)="　"
+		inText$=right$(inText$,length(inText$)-1)
+	endwhile
+	while right$(inText$,1)=" " or right$(inText$,1)="　"
+		inText$=left$(inText$,length(inText$)-1)
+	endwhile
+endproc
+

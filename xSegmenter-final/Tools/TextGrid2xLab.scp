@@ -1,0 +1,57 @@
+
+
+#功能：基于TextGrid文件转换生成语音训练用的lab文件
+#注意：phone内部不可再有空格和特殊字符，并最好是采用ANSI编码下能够正常显示的字符
+#适用于Praat 5.4.04及以后的版本
+#Author：XIONG Ziyu
+#2017-01-08
+#
+#参数说明
+#TextGrid_File_Path：TextGrid标注文件的路径
+#Phone_Tier_Index：音素或声韵母层的层级数
+
+form TextGrid2xLab
+	sentence TextGrid_File_Path C:\xSegmenter\EXAMPLES\普通话\
+	positive Phone_Tier_Index 3
+endform
+
+Text reading preferences: "UTF-8"
+Text writing preferences: "UTF-8"
+Create TextGrid: 0, 1, "Mary John bell", "bell"
+select all
+Remove
+
+fPath$=textGrid_File_Path$
+Create Strings as file list: "fileList", "'fPath$'*.TextGrid"
+fNums=Get number of strings
+for f from 1 to fNums
+	selectObject: "Strings fileList"
+	fname$=Get string: 'f'
+	fname$=fPath$+fname$
+	sfn$=fname$-".TextGrid"+".xLab"
+	filedelete 'sfn$'
+	Read from file: "'fname$'"
+	iNums=Get number of intervals: 'phone_Tier_Index'
+	for i from 1 to iNums
+		st=Get start point: 'phone_Tier_Index', 'i'
+		et=Get end point: 'phone_Tier_Index', 'i'
+		st=floor(st*1000)*10000
+		et=floor(et*1000)*10000
+		lab$=Get label of interval: 'phone_Tier_Index', 'i'
+		if index(lab$,"+")>0
+			lab$=left$(lab$,index(lab$,"+")-1)
+		endif
+		while index(" ",left$(lab$,1))>0 and lab$!=""
+			lab$=right$(lab$,length(lab$)-1)
+		endwhile
+		while index("0123456789 ",right$(lab$,1))>0 and lab$!=""
+			lab$=left$(lab$,length(lab$)-1)
+		endwhile
+		if lab$!=""
+			fileappend "'sfn$'" 'st' 'et' 'lab$''newline$'
+		endif
+	endfor
+	Remove
+endfor
+exitScript: "TextGrid 转写成 xLab 过程已经运行结束！"+newline$
+

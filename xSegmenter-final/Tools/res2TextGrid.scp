@@ -1,0 +1,312 @@
+
+#功能：将自动切分的标注文件转写为 TextGrid 文件
+#适用于Praat 5.4.04及以后的版本
+#Author：XIONG Ziyu
+#2017-01-08
+#
+#参数说明
+#segment_file：自动对齐后的数据结果文件名，UTF编码格式
+#textgrid_dict：含有声调和音节边界信息的发音词典文件
+#stateNum：状态数
+#with_syllable_tier：是否含有音节边界信息
+#with_tone_info：是否含有声调信息
+
+
+form info
+	sentence segment_file C:\xSegmenter\TEMP\segment.res
+	sentence textgrid_dict C:\xSegmenter\TEMP\TextGrid.dict
+	integer stateNum 3
+	boolean with_syllable_tier 1
+	boolean with_tone_info 1
+endform
+
+Text reading preferences... UTF-8
+Text writing preferences... UTF-8
+Create TextGrid... 0 1 "Mary John bell" bell
+select all
+Remove
+
+efbbbf$=left$("﻿ᠨᠢᠭᠡ",1)
+tableTextGrid=0
+if fileReadable(textgrid_dict$)
+	if with_syllable_tier=1 or with_tone_info=1
+		Read Table from tab-separated file... 'textgrid_dict$'
+		Rename... TextGrid
+		wordNums=Get number of rows
+		tableTextGrid=1
+		sPath$=left$(textgrid_dict$,rindex(textgrid_dict$,"\"))
+		sfilename$=sPath$+"多音字.txt"
+		filedelete 'sfilename$'
+	endif
+endif
+
+Read Strings from raw text file... 'segment_file$'
+Rename... fileList
+
+fNum=Get number of strings
+phoNum=0
+wordNum=0
+marker$=" "
+stateNum=stateNum+1
+lastState$=" S"+fixed$(stateNum,0)+" "
+allFileNum$=fixed$(fNum,0)
+for f from 1 to fNum
+	select Strings fileList
+	txt$=Get string... 'f'
+	if left$(txt$,1)=efbbbf$ and f=1
+		txt$=right$(txt$,length(txt$)-1)
+	endif
+	ntxt$=""
+	if index(txt$,".lab")>0
+		fName$=left$(txt$,index(txt$,".lab")-1)
+		fName$=right$(fName$,length(fName$)-1)
+		sound$=fName$+".raw"
+		tok=0
+		if fileReadable(sound$)
+			info$=fixed$(f,0)+"/"+allFileNum$+" res2TextGrid 正在处理下一文件:"+newline$+sound$+newline$+" "
+			echo 'info$'
+			tName$=fName$+".TextGrid"
+			Read from file... 'sound$'
+			Rename... temp
+			if with_syllable_tier=1 and tableTextGrid=1
+				To TextGrid... "WORD SYLLABLE PHONE"
+				syllableTier=2
+				phoneTier=3
+			else
+				To TextGrid... "WORD PHONE"
+				phoneTier=2
+				syllableTier=0
+			endif
+			tok=1
+		endif
+		phoNum=0
+		wordNum=0
+		preTT=0
+		presyTime=0
+		prewdTime=0
+	else
+		if index(txt$," s2 ")>0
+			value7$=""
+			value5$=""
+			call split 'txt$'
+			if value5$<>""
+				phoNum=phoNum+1
+				stP'phoNum'=extractNumber(value1$,"")
+				pho'phoNum'$=value5$
+			endif
+			if value7$<>""
+				wordNum=wordNum+1
+				word'wordNum'$=value7$
+				stW'wordNum'=extractNumber(value1$,"")
+			else
+				if value5$="sp"
+					wordNum=wordNum+1
+					word'wordNum'$=value5$
+					stW'wordNum'=extractNumber(value1$,"")	
+				endif	
+			endif
+		endif
+		if index(txt$,lastState$)>0 or index(txt$," sp ")>0
+			call split 'txt$'
+			etW'wordNum'=extractNumber(value2$,"")	
+			etP'phoNum'=extractNumber(value2$,"")
+		endif
+		nex=f+1
+		ntxt$=Get string... 'nex'
+	endif
+
+	syll$=""
+	if wordNum>0
+		if index(ntxt$,".lab")>0 or ntxt$="" or f=fNum
+			if tok=1
+				select TextGrid temp
+				pho$=pho1$
+				if syllableTier>0
+					Set interval text... 'syllableTier' 1 sil
+				endif
+				Set interval text... 'phoneTier' 1 'pho$'
+				lastPhone$=pho$
+				syllNum=1
+				for i from 2 to phoNum
+					t=stP'i'/10000000+0.015
+					if t>presyTime
+						Insert boundary... 'phoneTier' 't'
+						presyTime=t
+					endif
+					pho$=pho'i'$
+					Set interval text... 'phoneTier' 'i' 'pho$'
+					lastPhone$=pho$
+				endfor
+				pho$=word1$
+				Set interval text... 1 1 'pho$'
+				lastPhone$=pho$
+				for i from 2 to wordNum
+					t=stW'i'/10000000+0.015
+					if t>prewdTime
+						Insert boundary... 1 't'
+						prewdTime=t
+					endif
+					pho$=word'i'$
+					Set interval text... 1 'i' 'pho$'
+					lastPhone$=pho$
+				endfor
+				if with_syllable_tier=1 or with_tone_info=1
+					if tableTextGrid=1
+						call ModifyTextGrid
+					endif
+				endif
+				select TextGrid temp
+				tNum=Get number of tiers
+				for t from 1 to tNum
+					iiNum=Get number of intervals... 't'
+					Set interval text... 't' 1 sil
+					Set interval text... 't' 'iiNum' sil
+				endfor
+				Save as text file... 'tName$'
+				tok=0
+				select all
+				minus Strings fileList
+				if tableTextGrid=1
+					minus Table TextGrid
+				endif
+				Remove
+			endif
+		endif
+	endif
+endfor
+echo "TextGrid文件生成过程已经运行结束！"
+
+procedure split inStr$
+	a=0
+	while index(inStr$,marker$)>0 and inStr$!=""
+		ctxt$=left$(inStr$,index(inStr$,marker$)-1)
+		inStr$=right$(inStr$,length(inStr$)-index(inStr$,marker$))
+		call trim 'ctxt$'
+		if ctxt$<>""
+			a=a+1
+			value'a'$=ctxt$
+		endif
+	endwhile
+	if inStr$<>""
+		a=a+1
+		value'a'$=inStr$
+	endif
+	valueNum=a
+endproc
+
+procedure trim ctxt$
+	while left$(ctxt$,1)=" " and ctxt$!=""
+		ctxt$=right$(ctxt$,length(ctxt$)-1)
+	endwhile
+	while right$(ctxt$,1)=" " and ctxt$!=""
+		ctxt$=left$(ctxt$,length(ctxt$)-1)
+	endwhile
+endproc
+
+procedure ModifyTextGrid
+	sname$="temp"
+	select TextGrid 'sname$'
+	allTime=Get total duration
+	wt=1
+	pt=phoneTier
+	iNum=Get number of intervals... 'wt'
+	preTT=0
+	for d from 1 to iNum
+		select TextGrid 'sname$'
+		lab$=Get label of interval... 'wt' 'd'
+		st=Get start point... 'wt' 'd'
+		et=Get end point... 'wt' 'd'
+		t=st+0.001
+		pst=Get interval at time... 'pt' 't'
+		t=et-0.001
+		pet=Get interval at time... 'pt' 't'
+		plab$=""
+		a=0
+		for p from pst to pet
+			a=a+1
+			tlab$=Get label of interval... 'pt' 'p'
+			while index("0123456789 ",right$(tlab$,1))>0 and tlab$!=""
+				tlab$=left$(tlab$,length(tlab$)-1)
+			endwhile
+			phet'a'=Get end point... 'pt' 'p'
+			plab$=plab$+tlab$+" "
+		endfor
+		danci$=lab$+"{"+left$(plab$,length(plab$)-1)+"}"
+
+		select Table TextGrid
+		pos=Search column... words 'danci$'
+		if pos>0
+			dictWord$=Get value... 'pos' phones
+			if index(dictWord$,"]")>0
+				dictWord$=right$(dictWord$,length(dictWord$)-index(dictWord$,"]")-1)
+			endif
+			npos=pos+1
+			duoyinzi=1
+			allstr$=""
+			while duoyinzi=1 and npos<=wordNums
+				ctt$=Get value... 'npos' words
+				if ctt$=danci$
+					cdictWord$=Get value... 'npos' phones
+					allstr$=allstr$+cdictWord$+"#"
+					npos=npos+1
+				else
+					duoyinzi=0
+				endif
+			endwhile
+
+			if allstr$<>""
+				allstr$=dictWord$+"#"+allstr$
+				fileappend "'sfilename$'" 'tName$''tab$''d''tab$''st''tab$''et''tab$''danci$''tab$''allstr$''newline$'
+			endif
+			odictWord$=dictWord$
+			dictWord$=dictWord$+" | "
+			a=0
+			select TextGrid 'sname$'
+			syll$=""
+			while index(dictWord$," ")>0 and dictWord$<>""
+				lstr$=left$(dictWord$,index(dictWord$," ")-1)
+				dictWord$=right$(dictWord$,length(dictWord$)-index(dictWord$," "))
+				if lstr$<>"" and lstr$<>" " and lstr$<>"|"
+					a=a+1
+					pho'a'$=lstr$
+					syll$=syll$+lstr$+" "
+				endif
+				if lstr$="|" and with_syllable_tier=1 and syll$!=""
+					cet=phet'a'
+					if cet<allTime and cet>preTT
+						Insert boundary... 'syllableTier' 'cet'
+						preTT=cet
+					endif
+					t=cet-0.001
+					cpos=Get interval at time... 'syllableTier' 't'
+					syll$=left$(syll$,length(syll$)-1)
+					if cpos>0
+						csyll$=replace$(syll$," ","",0)
+						Set interval text... 'syllableTier' 'cpos' 'csyll$'
+					endif
+					syll$=""
+				endif
+			endwhile
+			a=0
+			if with_tone_info=1
+				for p from pst to pet
+					a=a+1
+					newtxt$=pho'a'$
+					Set interval text... 'pt' 'p' 'newtxt$'
+				endfor
+			endif
+		else
+			if with_syllable_tier=1
+				select TextGrid 'sname$'
+				if et<allTime and et>preTT
+					Insert boundary... 'syllableTier' 'et'
+					preTT=et
+				endif
+				t=et-0.001
+				cpos=Get interval at time... 'syllableTier' 't'
+				cclab$=replace$(lab$," ","",0)
+				Set interval text... 'syllableTier' 'cpos' 'cclab$'
+			endif
+		endif
+	endfor
+endproc

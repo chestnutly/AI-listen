@@ -1,0 +1,24 @@
+
+    To reference the file and the software, we can note it here：
+
+    Parselmouth: A library for manipulating .praat file
+
+    Cite:
+    @article{parselmouth,
+        author = "Yannick Jadoul and Bill Thompson and Bart de Boer",
+        title = "Introducing {P}arselmouth: A {P}ython interface to {P}raat",
+        journal = "Journal of Phonetics",
+        volume = "71",
+        pages = "1--15",
+        year = "2018",
+        doi = "https://doi.org/10.1016/j.wocn.2018.07.001"
+    }
+
+    And for Praat
+    Cite:
+    @misc{praat,
+        author = "Paul Boersma and David Weenink",
+        title = "{P}raat: doing phonetics by computer [{C}omputer program]",
+        howpublished = "Version 6.1.38, retrieved 2 January 2021 \url{http://www.praat.org/}",
+        year = "2021"
+    }

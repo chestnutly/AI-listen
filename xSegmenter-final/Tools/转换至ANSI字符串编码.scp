@@ -1,0 +1,244 @@
+
+#功能：此脚本用于发音文本文件和发音词典文件的字符串重新编码，以满足HTK工具的运行要求。
+#      如果用户的发音文本文件和发音词典文件中含有一些特殊字符，在UTF8编码下能够正常显示，但在ANSI编码格式下无法正常显示时，
+#      则可以使用此脚本程序对其进行字符串重新编码，生成ANSI下可以正常显示的编码文本。
+#策略：脚本程序将基于英文空格符号提取出发音文本文件和词典文件中的全部词串和音素串，然后用一系列字符串编号来代表所提取出来的原词串或音素串，
+#      同时会输出一个字符串的转换对应表文件，以便于后期能够基于该码表将字符串转换回来。
+#注意：在操作过程中，还会比对发音文本文件中出现的词串是否在发音词典文件中出现，如果有未登录词则会给出提示，并会自动添加到用户的发音词典末尾，
+#      用户应该在每次操作完此脚本之后细致检查发音词典文件，并修改那些发音形式标记为“unk”的条目，录入其正确的读音形式，
+#      以便于后期能够正确转写全部发音文本的读音形式。系统最后会生成一个新的发音词典文件，其扩展名为“*.new”，
+#      该词典文件的所有条目及其发音均采用新的字符串编码来标记，用户无需修改其中内容，
+#      另外，针对原来的每个发音文本文件均会生成一个新的用字符串编码来标记的发音文本文件，其扩展名由用户在输入参数时设定，
+#      在后期进行声学模型训练和切音标注时，请使用新生成的发音文本文件和新生成的发音词典文件。
+#Author：XIONG Ziyu
+#2017-01-08
+#适用于Praat 5.4.04及以后的版本
+#
+#参数说明
+#Dictionary_File_Name：原发音词典文件的路径及其文件名，发音词典文件应为UTF8编码格式
+#Recorded_Text_File_Path：原发音文本文件所在的路径，发音文本文件均应为UTF-8编码格式
+#Recorded_Text_File_Extname：原发音文本文件的扩展名
+#NewExtname_of_Text_File：新发音文本文件的扩展名，应与原扩展名不同
+
+
+form 转换至ANSI字符串编码
+	sentence Dictionary_File_Name C:\xSegmenter\EXAMPLES\普通话\数字发音词典.dict
+	sentence Recorded_Text_File_Path C:\xSegmenter\EXAMPLES\普通话\
+	sentence Recorded_Text_File_Extname txt
+	sentence NewExtname_of_Text_File rec
+endform
+
+Text reading preferences: "UTF-8"
+Text reading preferences: "UTF-8"
+Create TextGrid: 0, 1, "Mary John bell", "bell"
+select all
+Remove
+biaodian$=""""
+biaodian$=biaodian$+"; /,.; []	\`-=<>？?:\{}|+_()*&^%\$#@!~　，。、；【】·！￥%…&*（）—：“”‘’《》"
+efbbbf$=left$("﻿ᠨᠢᠭᠡ",1)
+
+if recorded_Text_File_Path$=newExtname_of_Text_File$
+	exitScript: "转换前后的文件扩展名应该不同，以免覆盖原始文本文件!"+newline$
+endif
+
+newdict$=dictionary_File_Name$+".new"
+filedelete 'newdict$'
+bianma$=left$(dictionary_File_Name$,rindex(dictionary_File_Name$,"."))+"bma"
+if fileReadable(bianma$)
+	Read Table from tab-separated file: "'bianma$'"
+	Rename: "BIANMA"
+else
+	Create Table with column names: "BIANMA", 0, "index 原字符 新字符"
+endif
+
+Read Strings from raw text file: "'dictionary_File_Name$'"
+fname$=selected$("Strings")
+rNums=Get number of strings
+for r from 1 to rNums
+	selectObject: "Strings 'fname$'"
+	txt$=Get string: 'r'
+	if left$(txt$,1)=efbbbf$ and r=1
+		txt$=right$(txt$,length(txt$)-1)
+	endif
+	if index(txt$," ")>0
+		txt$=txt$+" "
+		a=0
+		while index(txt$," ")>0 and txt$<>""
+			ltxt$=left$(txt$,index(txt$," ")-1)
+			txt$=right$(txt$,length(txt$)-index(txt$," "))
+			if ltxt$!=""
+				a=a+1
+				houzhui$=""
+				if a>1
+					while index("0123456789",right$(ltxt$,1))>0 and ltxt$<>""
+						houzhui$=right$(ltxt$,1)+houzhui$
+						ltxt$=left$(ltxt$,length(ltxt$)-1)
+					endwhile
+				endif
+				selectObject: "Table BIANMA"
+				cpos=Search column: "原字符", "'ltxt$'"
+				if cpos=0
+					Append row
+					cpos=Get number of rows
+					Set string value: 'cpos', "原字符", "'ltxt$'"
+					tpos$=fixed$(cpos,0)
+					while length(tpos$)<5
+						tpos$="0"+tpos$
+					endwhile
+					if a=1
+						Set string value: 'cpos', "新字符", "c'tpos$'c"
+					else
+						Set string value: 'cpos', "新字符", "y'tpos$'y"
+					endif
+					Set string value: 'cpos', "index", "'cpos'"
+				endif
+			endif
+		endwhile
+	endif
+endfor
+selectObject: "Strings 'fname$'"
+Remove
+
+Create Strings as file list: "fileList", "'recorded_Text_File_Path$'*.'recorded_Text_File_Extname$'"
+fNum=Get number of strings
+for f from 1 to fNum
+	selectObject: "Strings fileList"
+	fname$=Get string: 'f'
+	fname$=recorded_Text_File_Path$+fname$
+	sfn$=fname$-recorded_Text_File_Extname$+newExtname_of_Text_File$
+	wfn$=fname$-recorded_Text_File_Extname$+"wav"
+	if fileReadable(wfn$)
+		echo 'sfn$'
+		filedelete 'sfn$'
+		Read Strings from raw text file: "'fname$'"
+		fname$=selected$("Strings")
+		rNums=Get number of strings
+		for r from 1 to rNums
+			selectObject: "Strings 'fname$'"
+			txt$=Get string: 'r'
+			if left$(txt$,1)=efbbbf$ and r=1
+				txt$=right$(txt$,length(txt$)-1)
+			endif
+			txt$=txt$+" "
+			newtxt$=""
+			for i from 1 to length(txt$)
+				tt$=mid$(txt$,i,1)
+				if index(biaodian$,tt$)>0 and tt$!=" "
+					tt$=" "+tt$+" "
+				endif
+				newtxt$=newtxt$+tt$
+			endfor
+			txt$=newtxt$
+			newtxt$=""
+			while index(txt$," ")>0 and txt$<>""
+				ltxt$=left$(txt$,index(txt$," ")-1)
+				txt$=right$(txt$,length(txt$)-index(txt$," "))
+				if ltxt$!="" and ltxt$!=" " and index(biaodian$,ltxt$)=0
+					selectObject: "Table BIANMA"
+					cpos=Search column: "原字符", "'ltxt$'"
+					if cpos>0
+						ctt$=Get value: 'cpos', "新字符"
+					else
+						Append row
+						cpos=Get number of rows
+						tpos$=fixed$(cpos,0)
+						while length(tpos$)<5
+							tpos$="0"+tpos$
+						endwhile
+						Set string value: 'cpos', "原字符", "'ltxt$'"
+						Set string value: 'cpos', "新字符", "u'tpos$'u"
+						Set string value: 'cpos', "index", "'cpos'"
+						ctt$="z'cpos'z"
+					endif
+					ltxt$=ctt$
+				endif
+				newtxt$=newtxt$+ltxt$+" "
+			endwhile
+			fileappend "'sfn$'" 'newtxt$''newline$'
+		endfor
+		selectObject: "Strings 'fname$'"
+		Remove
+	endif
+endfor
+
+selectObject: "Table BIANMA"
+Sort rows: "原字符"
+rNums=Get number of rows
+wordNums=0
+unkNums=0
+for r from 1 to rNums
+	v$=Get value: 'r', "新字符"
+	if length(v$)=7
+		if left$(v$,1)="c" and right$(v$,1)="c"
+			wordNums=wordNums+1
+		endif
+		if left$(v$,1)="u" and right$(v$,1)="u"
+			wordNums=wordNums+1
+			unkNums=unkNums+1
+			v$=Get value: 'r', "原字符"
+			fileappend "'dictionary_File_Name$'" 'v$' unk'newline$'
+			Remove row: 'r'
+			r=r-1
+			rNums=rNums-1
+		endif
+	endif
+endfor
+
+if unkNums=0
+	Read Strings from raw text file: "'dictionary_File_Name$'"
+	fname$=selected$("Strings")
+	rNums=Get number of strings
+	for r from 1 to rNums
+		selectObject: "Strings 'fname$'"
+		txt$=Get string: 'r'
+		if left$(txt$,1)=efbbbf$ and r=1
+			txt$=right$(txt$,length(txt$)-1)
+		endif
+		newtxt$=""
+		if index(txt$," ")>0
+			txt$=txt$+" "
+			a=0
+			while index(txt$," ")>0 and txt$<>""
+				ltxt$=left$(txt$,index(txt$," ")-1)
+				txt$=right$(txt$,length(txt$)-index(txt$," "))
+				houzhui$=""
+				if ltxt$!="" and ltxt$!="|"
+					a=a+1
+					if a>1
+						while index("0123456789",right$(ltxt$,1))>0 and ltxt$<>""
+							houzhui$=right$(ltxt$,1)+houzhui$
+							ltxt$=left$(ltxt$,length(ltxt$)-1)
+						endwhile
+					endif
+					selectObject: "Table BIANMA"
+					cpos=Search column: "原字符", "'ltxt$'"
+					if cpos>0
+						ltxt$=Get value: 'cpos', "新字符"
+					endif
+				endif
+				newtxt$=newtxt$+ltxt$+houzhui$+" "
+			endwhile
+		else
+			newtxt$=txt$
+		endif
+		fileappend "'newdict$'" 'newtxt$''newline$'
+	endfor
+	selectObject: "Strings 'fname$'"
+	Remove
+endif
+
+selectObject: "Table BIANMA"
+Sort rows: "新字符"
+Save as tab-separated file: "'bianma$'"
+select all
+Remove
+
+txt$="编码转换过程已经结束，"+newline$
+txt$=txt$+"文本和词典中一共出现了'wordNums' 个词条。"+newline$+newline$
+if unkNums>0
+	txt$=txt$+"其中出现了'unkNums' 个未登录词，"+newline$
+	txt$=txt$+"请修改下一词典末尾部分标记为“unk”的条目："+newline$+newline$
+	txt$=txt$+dictionary_File_Name$+newline$+"然后再重新运行脚本！"+newline$
+endif
+exitScript: "'txt$'"
+

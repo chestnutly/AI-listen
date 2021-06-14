@@ -1,0 +1,132 @@
+
+#功能：此脚本基于编码转换列表将TextGrid文件中的编码转换回原始字符串。
+#Author：XIONG Ziyu
+#2017-01-08
+#适用于Praat 5.4.04及以后的版本
+#
+#参数说明
+#Dictionary_File_Name：原发音词典文件的路径及其文件名，发音词典文件应为UTF8编码格式
+#TextGrid_File_Path：语音标注文件*.TextGrid所在的路径，TextGrid标注文件均应为UTF-8编码格式
+
+
+form 转换至UTF8字符串编码
+	sentence Dictionary_File_Name C:\xSegmenter\EXAMPLES\普通话\数字发音词典.dict
+	sentence TextGrid_File_Path C:\xSegmenter\EXAMPLES\普通话\
+endform
+
+Text reading preferences: "UTF-8"
+Text reading preferences: "UTF-8"
+Create TextGrid: 0, 1, "Mary John bell", "bell"
+select all
+Remove
+bianma$=left$(dictionary_File_Name$,rindex(dictionary_File_Name$,"."))+"bma"
+if fileReadable(bianma$)
+	Read Table from tab-separated file: "'bianma$'"
+	Rename: "BIANMA"
+else
+	exitScript: "未找到下一字符串编码对应表文件："+newline$+bianma$+newline$+newline$
+endif
+
+Create Strings as file list: "fileList", "'textGrid_File_Path$'*.TextGrid"
+fNum=Get number of strings
+for f from 1 to fNum
+	selectObject: "Strings fileList"
+	fname$=Get string: 'f'
+	fname$=textGrid_File_Path$+fname$
+	Read from file: "'fname$'"
+	cName$=selected$("TextGrid")
+	tNums=Get number of tiers
+
+	tIndex=1
+	iNums=Get number of intervals: 'tIndex'
+	for i from 1 to iNums
+		selectObject: "TextGrid 'cName$'"
+		lab$=Get label of interval: 'tIndex', 'i'
+		if lab$!="sp" and lab$!="sil"
+			lab$=lab$+" "
+			newlab$=""
+			while index(lab$," ")>0
+				ltxt$=left$(lab$,index(lab$," ")-1)
+				lab$=right$(lab$,length(lab$)-index(lab$," "))
+				if ltxt$!=""
+					selectObject: "Table BIANMA"
+					cpos=Search column: "新字符", "'ltxt$'"
+					if cpos>0
+						ltxt$=Get value: 'cpos', "原字符"
+					endif
+					newlab$=newlab$+ltxt$+" "
+				endif
+			endwhile
+			while right$(newlab$,1)=" "
+				newlab$=left$(newlab$,length(newlab$)-1)
+			endwhile
+			selectObject: "TextGrid 'cName$'"
+			Set interval text: 'tIndex', 'i', "'newlab$'"
+		endif
+	endfor
+
+	tIndex=2
+	iNums=Get number of intervals: 'tIndex'
+	for i from 1 to iNums
+		selectObject: "TextGrid 'cName$'"
+		lab$=Get label of interval: 'tIndex', 'i'
+		if lab$!="sp" and lab$!="sil"
+			selectObject: "Table BIANMA"
+			cpos=Search column: "新字符", "'lab$'"
+			if cpos>0
+				ctt$=Get value: 'cpos', "原字符"
+				selectObject: "TextGrid 'cName$'"
+				Set interval text: 'tIndex', 'i', "'ctt$'"
+			endif
+		endif
+	endfor
+	if tNums=4
+		tIndex=4
+	else
+		tIndex=3
+	endif
+	iNums=Get number of intervals: 'tIndex'
+	for i from 1 to iNums
+		selectObject: "TextGrid 'cName$'"
+		lab$=Get label of interval: 'tIndex', 'i'
+		if lab$!="sp" and lab$!="sil"
+			houzhui$=""
+			while index("0123456789",right$(lab$,1))>0 and lab$!=""
+				houzhui$=right$(lab$,1)+houzhui$
+				lab$=left$(lab$,length(lab$)-1)
+			endwhile
+			selectObject: "Table BIANMA"
+			cpos=Search column: "新字符", "'lab$'"
+			if cpos>0
+				ctt$=Get value: 'cpos', "原字符"
+				selectObject: "TextGrid 'cName$'"
+				Set interval text: 'tIndex', 'i', "'ctt$''houzhui$'"
+			endif
+		endif
+	endfor
+
+	if tNums=4
+		selectObject: "TextGrid 'cName$'"
+		iNums=Get number of intervals: 3
+		for i from 1 to iNums
+			st=Get start point: 3, 'i'
+			et=Get end point: 3, 'i'
+			t=st+0.001
+			spos=Get interval at time: 4, 't'
+			t=et-0.001
+			epos=Get interval at time: 4, 't'
+			ctxt$=""
+			for j from spos to epos
+				lab$=Get label of interval: 4, 'j'
+				ctxt$=ctxt$+lab$
+			endfor
+			Set interval text: 3, 'i', "'ctxt$'"
+		endfor
+	endif
+	selectObject: "TextGrid 'cName$'"
+	Save as text file: "'fname$'"
+	Remove
+endfor
+
+exitScript: "已操作完成！"+newline$
+

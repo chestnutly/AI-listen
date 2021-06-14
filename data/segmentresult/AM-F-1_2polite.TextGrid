@@ -1,0 +1,166 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 2.9997278911564624 
+tiers? <exists> 
+size = 7 
+item []: 
+    item [1]:
+        class = "TextTier" 
+        name = "TONE" 
+        xmin = 0 
+        xmax = 2.9997278911564624 
+        points: size = 3 
+        points [1]:
+            number = 1.712485746133146 
+            mark = "H*" 
+        points [2]:
+            number = 2.053834580290258 
+            mark = "L+H**" 
+        points [3]:
+            number = 2.45 
+            mark = "L-H%" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "WORD" 
+        xmin = 0 
+        xmax = 2.9997278911564624 
+        intervals: size = 7 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.2727508036949386 
+            text = "sil" 
+        intervals [2]:
+            xmin = 1.2727508036949386 
+            xmax = 1.3636891086077358 
+            text = "you" 
+        intervals [3]:
+            xmin = 1.3636891086077358 
+            xmax = 1.538868423311893 
+            text = "could" 
+        intervals [4]:
+            xmin = 1.538868423311893 
+            xmax = 1.7948479272045212 
+            text = "send" 
+        intervals [5]:
+            xmin = 1.7948479272045212 
+            xmax = 1.9227056294109752 
+            text = "an" 
+        intervals [6]:
+            xmin = 1.9227056294109752 
+            xmax = 2.45 
+            text = "email" 
+        intervals [7]:
+            xmin = 2.45 
+            xmax = 2.9997278911564624 
+            text = "sil" 
+    item [3]:
+        class = "IntervalTier" 
+        name = "PHONE" 
+        xmin = 0 
+        xmax = 2.9997278911564624 
+        intervals: size = 10 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.2727508036949386 
+            text = "sil" 
+        intervals [2]:
+            xmin = 1.2727508036949386 
+            xmax = 1.3627959629036097 
+            text = "yuw%" 
+        intervals [3]:
+            xmin = 1.3627959629036097 
+            xmax = 1.447976168612445 
+            text = "k" 
+        intervals [4]:
+            xmin = 1.447976168612445 
+            xmax = 1.538868423311893 
+            text = "uhd%" 
+        intervals [5]:
+            xmin = 1.538868423311893 
+            xmax = 1.667465543974322 
+            text = "s" 
+        intervals [6]:
+            xmin = 1.667465543974322 
+            xmax = 1.7948479272045212 
+            text = "ehnd%" 
+        intervals [7]:
+            xmin = 1.7948479272045212 
+            xmax = 1.9227056294109752 
+            text = "aen%" 
+        intervals [8]:
+            xmin = 1.9227056294109752 
+            xmax = 2.0784351145521596 
+            text = "iy%" 
+        intervals [9]:
+            xmin = 2.0784351145521596 
+            xmax = 2.45 
+            text = "meyl%" 
+        intervals [10]:
+            xmin = 2.45 
+            xmax = 2.9997278911564624 
+            text = "sil" 
+    item [4]:
+        class = "TextTier" 
+        name = "BREAK" 
+        xmin = 0 
+        xmax = 2.9997278911564624 
+        points: size = 5 
+        points [1]:
+            number = 1.3627959629036097 
+            mark = "1" 
+        points [2]:
+            number = 1.538868423311893 
+            mark = "1" 
+        points [3]:
+            number = 1.7948479272045212 
+            mark = "1" 
+        points [4]:
+            number = 1.9227056294109752 
+            mark = "1" 
+        points [5]:
+            number = 2.45 
+            mark = "4" 
+    item [5]:
+        class = "TextTier" 
+        name = "MISC" 
+        xmin = 0 
+        xmax = 2.9997278911564624 
+        points: size = 0 
+    item [6]:
+        class = "TextTier" 
+        name = "PITCH RANGE" 
+        xmin = 0 
+        xmax = 2.9997278911564624 
+        points: size = 4 
+        points [1]:
+            number = 1.455136498600197 
+            mark = "H" 
+        points [2]:
+            number = 1.8100704326839534 
+            mark = "M" 
+        points [3]:
+            number = 2.000522787558164 
+            mark = "L" 
+        points [4]:
+            number = 2.2544592607237783 
+            mark = "F" 
+    item [7]:
+        class = "IntervalTier" 
+        name = "SFT" 
+        xmin = 0 
+        xmax = 2.9997278911564624 
+        intervals: size = 3 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.9227056294109752 
+            text = "" 
+        intervals [2]:
+            xmin = 1.9227056294109752 
+            xmax = 2.45 
+            text = "SFT" 
+        intervals [3]:
+            xmin = 2.45 
+            xmax = 2.9997278911564624 
+            text = "" 

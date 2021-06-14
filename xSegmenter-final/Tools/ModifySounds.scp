@@ -1,0 +1,71 @@
+
+#功能：根据文件名列表将声音文件整理为16000Hz的采样率和单通道。
+#Author：XIONG Ziyu
+#2017-01-08
+#适用于Praat 5.4.04及以后的版本
+#
+#参数说明
+#sound_file_list：声音文件名列表的文件，应为UTF8编码格式
+
+form infomation
+	sentence sound_file_list C:\xSegmenter\TEMP\wav2raw.lst
+endform
+
+Text reading preferences... UTF-8
+Text writing preferences... UTF-8
+Create TextGrid: 0, 1, "Mary John bell", "bell"
+select all
+Remove
+
+Read Strings from raw text file... 'sound_file_list$'
+Rename... temp
+fNum=Get number of strings
+
+allFileNum$=fixed$(fNum,0)
+for f from 1 to fNum
+	select Strings temp
+	tt$=Get string... 'f'
+	fName$=""
+	sName$=""
+	if index(tt$,"#")>0
+		fName$=left$(tt$,index(tt$,"#")-1)
+		sName$=right$(tt$,length(tt$)-index(tt$,"#"))
+	endif
+	if fileReadable(fName$)=1 and fileReadable(sName$)=0 and index(fName$,".wav")>0
+		info$=fixed$(f,0)+"/"+allFileNum$+" ModifySounds 正在处理下一文件:"+newline$+fName$+newline$+" "
+		echo 'info$'
+		nowarn nocheck Read from file... 'fName$'
+		sn$=selected$()
+		if index(sn$,"Sound ")>0 and index(sn$,"Strings ")=0
+			fre=Get sampling frequency
+			nch=Get number of channels
+			m=0
+			if nch=2
+				Extract one channel: 1
+				m=1
+			endif
+			if fre<>16000
+				Resample: 16000, 50
+				fre=16000
+				m=1
+			endif
+			Rename... temp
+			times=Get total duration
+			Create Sound from formula: "sineWithNoise", 1, 0, 'times', 'fre', "randomGauss(0,0.0001)"
+			Scale peak: 0.00001
+			Rename... noise
+			select Sound temp
+			plus Sound noise
+			Combine to stereo
+			Convert to mono
+			nowarn nocheck Save as WAV file... 'sName$'
+			select all
+			minus Strings temp
+			Remove
+		endif
+	endif
+endfor
+echo "声音文件整理过程已经运行结束！"
+
+
+
